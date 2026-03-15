@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>大宝哥的频道 · 2026-03-15</title>
+<script type="application/json" id="page-meta">{"date":"2026-03-15","day":"sunday","theme":"🌏 世界历史 & 创意 World History & Creative","child_name":"大宝哥","total_duration":63,"video_count":14,"series_names":["爱因斯坦的故事","天气科普","如果历史是一群喵","儿童绘画教室","Free Choice A","Free Choice B","Free Choice C"]}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--c:#00695C;--bg:#E0F2F1;--grad:linear-gradient(135deg, #004D40 0%, #26A69A 100%)}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f5f5f7;color:#1d1d1f;-webkit-font-smoothing:antialiased}
+.wrap{max-width:500px;margin:0 auto;padding-bottom:env(safe-area-inset-bottom,20px)}
+
+/* Header */
+.hdr{background:var(--grad);color:#fff;padding:48px 24px 28px;border-radius:0 0 32px 32px;text-align:center;position:relative;overflow:hidden}
+.hdr::before{content:'';position:absolute;top:-30%;right:-20%;width:200px;height:200px;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hdr::after{content:'';position:absolute;bottom:-20%;left:-15%;width:160px;height:160px;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hdr-hi{font-size:14px;opacity:.7;margin-bottom:6px;letter-spacing:1px;position:relative}
+.hdr h1{font-size:32px;font-weight:800;margin-bottom:10px;position:relative}
+.hdr-sub{font-size:15px;opacity:.85;margin-bottom:16px;position:relative}
+.hdr-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:8px 18px;border-radius:20px;font-size:14px;font-weight:600;position:relative}
+.hdr-stats{margin-top:14px;font-size:13px;opacity:.6;position:relative}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.hdr-float{display:inline-block;animation:float 3s ease-in-out infinite}
+
+/* Headlines */
+.headlines{margin:20px 16px;background:#fff;border-radius:20px;padding:20px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.sec-title{font-size:17px;font-weight:700;color:var(--c);margin-bottom:16px}
+.hl-row{display:flex;gap:12px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #f0f0f0}
+.hl-row:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.hl-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.hl-body{flex:1}
+.hl-label{font-size:13px;font-weight:600;color:#888;margin-bottom:3px}
+.hl-text{font-size:15px;line-height:1.6;color:#333}
+.hl-curiosity{margin-top:16px;padding:16px;background:var(--bg);border-radius:14px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.hl-q-label{font-size:13px;color:#888;margin-bottom:4px}
+.hl-q{font-size:16px;font-weight:600;color:var(--c)}
+.hl-a{margin-top:8px}
+.hl-a-hint{font-size:13px;color:#aaa}
+.hl-a-body{display:none;margin-top:8px;font-size:14px;line-height:1.6;color:#555;padding:12px;background:#fff;border-radius:10px}
+.hl-curiosity.open .hl-a-hint{display:none}
+.hl-curiosity.open .hl-a-body{display:block}
+
+/* Playlist section */
+.playlist{margin:20px 16px}
+.playlist .sec-title{color:#1d1d1f}
+.slot-label{font-size:14px;font-weight:600;color:#666;margin:16px 0 10px 4px}
+.slot-label:first-child{margin-top:0}
+
+/* Video cards */
+.vcard{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);margin-bottom:12px;cursor:pointer;transition:transform .12s;-webkit-tap-highlight-color:transparent}
+.vcard:active{transform:scale(.97)}
+.vthumb{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;position:relative;display:flex;align-items:center;justify-content:center}
+.thumb-icon{font-size:32px;color:rgba(255,255,255,.8);font-weight:700}
+.vdur{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.72);color:#fff;font-size:12px;padding:2px 8px;border-radius:6px;font-weight:500}
+.vinfo{padding:12px 16px}
+.vtitle{font-size:15px;font-weight:600;margin-bottom:3px;line-height:1.35}
+.vmeta{font-size:13px;color:#888}
+
+/* Footer (inline) */
+.ftr{margin:24px 16px 16px;text-align:center}
+.ftr .total{font-size:14px;color:#888;margin-bottom:12px}
+.ftr-link{display:inline-block;font-size:14px;color:var(--c);text-decoration:none;font-weight:600;padding:8px 16px}
+
+/* Sticky CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:900;padding:12px 16px;padding-bottom:max(12px,env(safe-area-inset-bottom));background:rgba(245,245,247,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(0,0,0,.06);display:flex;gap:10px;justify-content:center;max-width:500px;margin:0 auto}
+.sticky-btn{flex:1;padding:14px;border-radius:14px;font-size:16px;font-weight:700;border:none;cursor:pointer;text-decoration:none;text-align:center;transition:transform .1s;-webkit-tap-highlight-color:transparent;display:block;max-width:240px}
+.sticky-btn:active{transform:scale(.95)}
+.sticky-btn-p{background:var(--grad);color:#fff;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.sticky-btn-s{background:#fff;color:var(--c);border:2px solid var(--c);font-weight:600;font-size:14px}
+
+/* ===== PLAY MODE ===== */
+#play{position:fixed;inset:0;background:#000;z-index:1000;display:none;flex-direction:column;overflow-y:auto}
+#play.on{display:flex}
+.p-hdr{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top));background:#111;color:#fff;flex-shrink:0}
+.p-back{background:none;border:none;color:#fff;font-size:16px;cursor:pointer;padding:8px 4px}
+.p-cnt{font-size:14px;color:#aaa}
+.p-player{width:100%;aspect-ratio:16/9;background:#000;flex-shrink:0}
+.p-player iframe{width:100%;height:100%;border:none}
+.p-quick-nav{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:#0a0a0a;flex-shrink:0;gap:8px}
+.qn-btn{padding:8px 16px;border-radius:10px;font-size:14px;font-weight:600;border:1px solid #333;background:rgba(255,255,255,.06);color:#ccc;cursor:pointer;transition:transform .1s,background .15s;white-space:nowrap}
+.qn-btn:active{transform:scale(.95);background:rgba(255,255,255,.12)}
+.qn-btn:disabled{opacity:.25;cursor:default}
+.qn-cnt{font-size:13px;color:#666;flex-shrink:0}
+.p-np{padding:14px 20px;background:#111;color:#fff;flex-shrink:0}
+.p-np h3{font-size:16px;font-weight:600;margin-bottom:4px}
+.p-np .p-np-meta{font-size:13px;color:#aaa}
+.p-np .p-np-link{font-size:12px;color:#555;text-decoration:none;display:inline-block;margin-top:6px}
+.p-np .p-np-link:hover{color:#888}
+
+.p-list{flex:1;background:#1a1a1a;padding:8px 0;overflow-y:auto}
+.p-list-label{font-size:13px;color:#555;padding:8px 20px 4px;font-weight:600}
+.pli{display:flex;align-items:center;gap:12px;padding:12px 20px;cursor:pointer;transition:background .12s;-webkit-tap-highlight-color:transparent}
+.pli:active{background:#2a2a2a}
+.pli.on{background:rgba(255,255,255,.07)}
+.pli-st{width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#555;flex-shrink:0}
+.pli.on .pli-st{color:var(--c)}
+.pli.done .pli-st{color:#4CAF50}
+.pli-info{flex:1;min-width:0}
+.pli-t{font-size:14px;color:#ddd;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pli.on .pli-t{color:#fff;font-weight:600}
+.pli-m{font-size:12px;color:#555;margin-top:2px}
+
+.p-nav{display:flex;gap:12px;padding:16px 20px;padding-bottom:max(16px,env(safe-area-inset-bottom));background:#111;flex-shrink:0}
+.nbtn{flex:1;padding:14px;border-radius:12px;font-size:15px;font-weight:600;border:none;cursor:pointer;transition:transform .1s}
+.nbtn:active{transform:scale(.95)}
+.nbtn:disabled{opacity:.3;cursor:default}
+.nbtn:disabled:active{transform:none}
+.nbtn-prev{background:#333;color:#fff}
+.nbtn-next{background:var(--c);color:#fff}
+
+.p-done{display:none;text-align:center;padding:32px 20px;background:#111;flex-shrink:0}
+.p-done.show{display:block}
+.p-done h3{font-size:24px;margin-bottom:8px;color:#fff}
+.p-done p{font-size:14px;color:#aaa;margin-bottom:20px}
+.p-done .share{display:inline-block;padding:14px 32px;background:#25D366;color:#fff;font-size:16px;font-weight:600;border-radius:14px;text-decoration:none;transition:transform .1s}
+.p-done .share:active{transform:scale(.95)}
+
+/* Interstitial */
+#inter{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.96);display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:#fff;padding:24px}
+#inter.show{display:flex}
+.inter-emoji{font-size:72px;margin-bottom:20px;animation:breathe 2s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.inter-title{font-size:24px;font-weight:700;margin-bottom:8px}
+.inter-tip{font-size:15px;color:#aaa;margin-bottom:32px;line-height:1.5}
+.inter-next-box{background:rgba(255,255,255,.08);border-radius:16px;padding:16px 24px;margin-bottom:24px;width:100%;max-width:340px}
+.inter-next-lbl{font-size:12px;color:#666;margin-bottom:8px;letter-spacing:1px}
+.inter-next-t{font-size:16px;font-weight:600;margin-bottom:4px}
+.inter-next-m{font-size:13px;color:#888}
+.inter-timer{font-size:56px;font-weight:700;color:var(--c);margin:8px 0 2px;font-variant-numeric:tabular-nums;letter-spacing:2px}
+.inter-timer-lbl{font-size:13px;color:#666;margin-bottom:20px}
+.inter-bar{width:100%;max-width:300px;height:6px;background:rgba(255,255,255,.1);border-radius:3px;margin:0 auto 28px;overflow:hidden}
+.inter-bar-fill{height:100%;background:var(--c);border-radius:3px;transition:width 1s linear;width:0}
+.inter-btn{padding:16px 48px;border-radius:14px;font-size:16px;font-weight:600;border:none;cursor:pointer;transition:transform .1s,opacity .2s;color:#fff;background:var(--c);min-width:220px}
+.inter-btn:disabled{opacity:.4;cursor:default}
+.inter-btn:active:not(:disabled){transform:scale(.95)}
+.inter-btn-share{background:#25D366}
+.inter-prog{font-size:13px;color:#555;margin-top:20px}
+
+/* Bilibili panel */
+.bili-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 24px;background:#111;text-align:center;color:#fff;width:100%;aspect-ratio:16/9}
+.bili-emoji{font-size:48px;margin-bottom:16px}
+.bili-title{font-size:17px;font-weight:600;margin-bottom:6px;padding:0 12px;line-height:1.4}
+.bili-meta{font-size:13px;color:#aaa;margin-bottom:24px}
+.bili-btn-hd{padding:14px 32px;border-radius:12px;font-size:16px;font-weight:600;border:none;cursor:pointer;background:#FB7299;color:#fff;margin-bottom:12px;width:100%;max-width:280px;transition:transform .1s}
+.bili-btn-hd:active{transform:scale(.95)}
+.bili-btn-embed{padding:10px 24px;border-radius:10px;font-size:14px;border:1px solid #444;background:transparent;color:#888;cursor:pointer;width:100%;max-width:280px;transition:transform .1s}
+.bili-btn-embed:active{transform:scale(.95)}
+.bili-hint{font-size:13px;color:#555;margin-top:16px;line-height:1.6}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* Quiz / Pre-reading page */
+#quiz{position:fixed;inset:0;z-index:1000;background:#f5f5f7;display:none;color:#1d1d1f;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#quiz.show{display:block}
+.quiz-scroll{max-width:500px;margin:0 auto;min-height:100vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.quiz-hdr{background:var(--grad);color:#fff;padding:44px 24px 24px;border-radius:0 0 32px 32px;text-align:center;position:relative;overflow:hidden}
+.quiz-hdr::before{content:'';position:absolute;top:-30%;right:-20%;width:200px;height:200px;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.quiz-hdr::after{content:'';position:absolute;bottom:-20%;left:-15%;width:160px;height:160px;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.quiz-hdr-icon{display:none}
+.quiz-hdr-title{font-size:24px;font-weight:800;margin-bottom:8px;letter-spacing:.5px;position:relative;animation:quizTitleIn .6s ease both}
+.quiz-hdr-title::before{content:'📰 ';font-size:22px}
+.quiz-hdr-sub{font-size:14px;opacity:.75;position:relative;animation:quizSubIn .6s ease .1s both;line-height:1.5}
+.quiz-hdr-progress{margin-top:14px;position:relative;animation:quizSubIn .6s ease .2s both}
+.quiz-hdr-progress-inner{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 18px;border-radius:20px;font-size:13px;font-weight:600}
+.quiz-hdr-progress-inner span{opacity:1}
+@keyframes quizTitleIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes quizSubIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.quiz-progress{display:none}
+.quiz-sections{margin:12px 16px 20px;background:#fff;border-radius:20px;padding:20px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.quiz-sec{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #f0f0f0;transition:opacity .3s}
+.quiz-sec:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.quiz-sec.locked{opacity:.3;pointer-events:none}
+.quiz-sec.locked .quiz-sec-content{display:none}
+.quiz-sec.locked .quiz-sec-lock{display:block}
+.quiz-sec-top{display:flex;gap:12px}
+.quiz-sec-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.quiz-sec-body{flex:1}
+.quiz-sec-title{font-size:13px;font-weight:600;color:#888;margin-bottom:3px}
+.quiz-sec-text{font-size:15px;line-height:1.6;color:#333}
+.quiz-sec-lock{display:none;font-size:13px;color:#aaa;margin-top:4px;margin-left:32px}
+.quiz-sec-ack{display:flex;justify-content:flex-end;margin-top:10px;min-height:32px;align-items:center}
+.quiz-sec-hint{font-size:12px;color:#ccc;margin-left:auto}
+.quiz-sec-btn{padding:6px 16px;border-radius:10px;font-size:13px;font-weight:600;border:1px solid #ddd;background:#fafafa;color:#888;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent;animation:fadeIn .5s ease}
+.quiz-sec-btn:active{transform:scale(.94)}
+.quiz-sec.done .quiz-sec-btn{background:#e8f5e9;border-color:#a5d6a7;color:#2e7d32;pointer-events:none}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.quiz-divider{width:40px;height:3px;background:linear-gradient(90deg,var(--c),transparent);margin:8px auto 8px;border-radius:2px}
+.quiz-challenge{margin:0 16px 20px;background:#fff;border-radius:20px;padding:28px 20px;box-shadow:0 2px 16px rgba(0,0,0,.06);text-align:center}
+.quiz-challenge.locked{opacity:.35;pointer-events:none}
+.quiz-challenge-lock{text-align:center;margin:0 16px 20px;padding:20px;color:#aaa;font-size:14px}
+.quiz-challenge-lock .lock-icon{font-size:32px;margin-bottom:8px}
+.quiz-emoji{font-size:48px;margin-bottom:8px}
+.quiz-label{font-size:13px;color:#888;letter-spacing:2px;margin-bottom:12px;font-weight:600}
+.quiz-q{font-size:18px;font-weight:700;line-height:1.5;margin-bottom:24px;color:var(--c);padding:0 4px}
+.quiz-btns{display:flex;flex-direction:column;gap:10px;align-items:center;margin-bottom:20px}
+.quiz-btn{padding:14px 32px;border-radius:14px;font-size:16px;font-weight:600;border:none;cursor:pointer;transition:transform .12s;-webkit-tap-highlight-color:transparent;width:100%;max-width:280px;animation:fadeIn .5s ease}
+.quiz-btn:active{transform:scale(.94)}
+.quiz-btn-tell{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff}
+.quiz-ans{background:var(--bg);border-radius:14px;padding:16px;margin-bottom:20px;font-size:14px;line-height:1.7;color:#555;display:none;text-align:left}
+.quiz-ans.show{display:block}
+.quiz-ans-label{font-size:12px;color:#888;margin-bottom:6px;text-align:center;font-weight:600}
+.quiz-reading-hint{text-align:center;font-size:13px;color:#aaa;margin-bottom:20px}
+.quiz-go{padding:16px 48px;border-radius:16px;font-size:17px;font-weight:700;border:none;cursor:pointer;background:linear-gradient(135deg,#43e97b 0%,#38f9d7 100%);color:#1a1a2e;display:none;transition:transform .12s;box-shadow:0 4px 16px rgba(67,233,123,.3);animation:fadeIn .5s ease}
+.quiz-go:active{transform:scale(.94)}
+.quiz-go.show{display:inline-block}
+/* News quiz test */
+.nq{margin:0 16px 20px;background:#fff;border-radius:20px;padding:28px 20px;box-shadow:0 2px 16px rgba(0,0,0,.06);text-align:center;display:none}
+.nq.show{display:block;animation:slideUp .5s ease}
+.nq-emoji{font-size:40px;margin-bottom:6px}
+.nq-title{font-size:16px;font-weight:700;margin-bottom:4px;color:#1d1d1f}
+.nq-progress{font-size:13px;color:#888;margin-bottom:20px}
+.nq-progress span{color:var(--c);font-weight:700}
+.nq-q{font-size:17px;font-weight:600;line-height:1.5;margin-bottom:20px;color:#333;text-align:left;padding:0 4px}
+.nq-opts{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.nq-opt{padding:14px 16px;border-radius:14px;font-size:15px;border:2px solid #e8e8ed;background:#fafafa;color:#333;cursor:pointer;text-align:left;transition:all .2s;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;gap:10px}
+.nq-opt:active{transform:scale(.97)}
+.nq-opt-letter{width:28px;height:28px;border-radius:50%;background:#e8e8ed;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#888;flex-shrink:0;transition:all .2s}
+.nq-opt-text{flex:1}
+.nq-opt.correct{border-color:#66bb6a;background:#e8f5e9}
+.nq-opt.correct .nq-opt-letter{background:#66bb6a;color:#fff}
+.nq-opt.wrong{border-color:#ef5350;background:#ffebee;animation:shake .4s ease}
+.nq-opt.wrong .nq-opt-letter{background:#ef5350;color:#fff}
+.nq-opt.disabled{pointer-events:none;opacity:.5}
+.nq-opt.correct.disabled{opacity:1}
+.nq-feedback{font-size:14px;margin-bottom:16px;min-height:20px;font-weight:600}
+.nq-feedback.right{color:#2e7d32}
+.nq-feedback.oops{color:#c62828}
+.nq-next{padding:12px 32px;border-radius:12px;font-size:15px;font-weight:600;border:none;cursor:pointer;background:var(--c);color:#fff;display:none;animation:fadeIn .4s ease;transition:transform .1s}
+.nq-next:active{transform:scale(.94)}
+.nq-next.show{display:inline-block}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* Score card */
+.nq-score-emoji{font-size:48px;margin-bottom:8px}
+.nq-score-title{font-size:20px;font-weight:800;margin-bottom:16px}
+.nq-score-list{text-align:left;margin-bottom:20px}
+.nq-score-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:14px}
+.nq-score-item:last-child{border-bottom:none}
+.nq-score-icon{font-size:18px;flex-shrink:0}
+.nq-score-txt{flex:1;color:#333}
+.nq-score-msg{font-size:14px;color:#888;margin-bottom:20px;line-height:1.6}
+
+/* Review (补课) */
+.nq-rev-card{background:#fff;border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.05);border-left:4px solid var(--c)}
+.nq-rev-q{font-size:15px;font-weight:600;color:#c62828;margin-bottom:12px}
+.nq-rev-news{background:var(--bg);border-radius:12px;padding:14px;margin-bottom:12px;font-size:14px;line-height:1.6;color:#333}
+.nq-rev-news-title{font-size:12px;font-weight:600;color:#888;margin-bottom:4px}
+.nq-rev-correct{font-size:15px;font-weight:600;color:#2e7d32;margin-bottom:12px}
+.nq-rev-ack{display:flex;justify-content:flex-end}
+.nq-rev-btn{padding:8px 20px;border-radius:10px;font-size:13px;font-weight:600;border:none;cursor:pointer;background:#e8f5e9;color:#2e7d32;transition:transform .1s}
+.nq-rev-btn:active{transform:scale(.94)}
+.nq-rev-btn.done{background:#c8e6c9;pointer-events:none}
+
+/* Retry header */
+.nq-retry-hdr{text-align:center;margin-bottom:16px}
+.nq-retry-emoji{font-size:36px;margin-bottom:6px}
+.nq-retry-title{font-size:16px;font-weight:700;color:#333}
+.nq-retry-sub{font-size:13px;color:#888;margin-top:4px}
+
+.quiz-skip{display:block;margin:0 auto;font-size:13px;color:#aaa;cursor:pointer;border:none;background:none;padding:12px 16px}
+</style>
+</head>
+<body>
+
+<div id="browse" class="wrap">
+  <div class="hdr">
+    <div class="hdr-hi">3月15日 · 周日</div>
+    <h1><span class="hdr-float">👋</span> 嗨，大宝哥！</h1>
+    <p class="hdr-sub">你的专属放映厅开场啦</p>
+    <div class="hdr-badge">🎬 今日主题 · 🌏 世界历史 &amp; 创意 World History &amp; Creative</div>
+    <div class="hdr-stats">🎬 14个精彩视频 · ⏱ 63分钟</div>
+  </div>
+
+  
+    <section class="headlines">
+      <div class="sec-title">🌟 大宝哥的今日头条</div>
+      
+      <div class="hl-row">
+        <span class="hl-icon">📅</span>
+        <div class="hl-body">
+          <div class="hl-label">今天是什么日子</div>
+          <div class="hl-text">3 月 15 日 · 第一学期假期第一天<br>昨天是爱因斯坦诞辰纪念日（1879 年 3 月 14 日）<br>E=mc² 为什么质量和能量可以互相转换？</div>
+        </div>
+      </div>
+      <div class="hl-row">
+        <span class="hl-icon">🌍</span>
+        <div class="hl-body">
+          <div class="hl-label">世界在发生什么</div>
+          <div class="hl-text">NASA 公布太阳系探索新发现<br>科学家在火星和木卫二上寻找生命迹象</div>
+        </div>
+      </div>
+      <div class="hl-row">
+        <span class="hl-icon">🌤️</span>
+        <div class="hl-body">
+          <div class="hl-label">新加坡天气</div>
+          <div class="hl-text">🌦️ 附近有阵雨，26-29°C，体感 34°C<br>下雨时为什么先看到闪电后听到雷声？</div>
+        </div>
+      </div>
+      
+      <div class="hl-curiosity" onclick="this.classList.toggle('open')">
+        <div class="hl-q-label">❓ 大宝哥可能会问</div>
+        <div class="hl-q">"为什么爱因斯坦这么聪明？他的脑子跟别人不一样吗？"</div>
+        <div class="hl-a">
+            <div class="hl-a-hint">👆 点击看看答案</div>
+            <div class="hl-a-body">爱因斯坦的大脑确实有些特别之处，但更重要的是他永远保持好奇心，喜欢问'如果……会怎样'的问题。每个人都可以通过多问问题、多思考来变得更聪明！</div>
+          </div>
+      </div>
+    </section>
+
+  <section class="playlist">
+    <div class="sec-title">📺 今日片单</div>
+    <div class="slot-label">🌟 今日头条 · 爱因斯坦的故事</div>
+      <div class="vcard" onclick="enterPlayMode(0)">
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
+          <span class="vdur">5min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">64 爱因斯坦的故事【科普人物故事】</div>
+          <div class="vmeta">Bilibili · 中文</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(1)">
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
+          <span class="vdur">1min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">下雨是如何形成的？跟云朵有何关系？</div>
+          <div class="vmeta">Bilibili · 中文</div>
+        </div>
+      </div><div class="slot-label">📺 主系列 · 如果历史是一群喵</div>
+      <div class="vcard" onclick="enterPlayMode(2)">
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">华夏诞生</div>
+          <div class="vmeta">Bilibili · 中文 · 第 1 集</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(3)">
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">统一战争</div>
+          <div class="vmeta">Bilibili · 中文 · 第 2 集</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(4)">
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">三皇五帝</div>
+          <div class="vmeta">Bilibili · 中文 · 第 3 集</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(5)">
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">大禹建国</div>
+          <div class="vmeta">Bilibili · 中文 · 第 4 集</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(6)">
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">夏家天下</div>
+          <div class="vmeta">Bilibili · 中文 · 第 5 集</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(7)">
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">少康复国</div>
+          <div class="vmeta">Bilibili · 中文 · 第 6 集</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(8)">
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">商汤灭夏</div>
+          <div class="vmeta">Bilibili · 中文 · 第 7 集</div>
+        </div>
+      </div><div class="slot-label">📺 副系列 · 儿童绘画教室</div>
+      <div class="vcard" onclick="enterPlayMode(9)">
+        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/xgWR6r3_lRo/mqdefault.jpg')">
+          
+          <span class="vdur">8min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">How To Draw A Spinosaurus Dinosaur</div>
+          <div class="vmeta">YouTube · English</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(10)">
+        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/clDh6CsrMK8/mqdefault.jpg')">
+          
+          <span class="vdur">7min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">How To Draw A TacoSaurus</div>
+          <div class="vmeta">YouTube · English</div>
+        </div>
+      </div><div class="slot-label">🎯 自由选择 · Free Choice A</div>
+      <div class="vcard" onclick="enterPlayMode(11)">
+        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/KAT5NiWHFIU/mqdefault.jpg')">
+          
+          <span class="vdur">15min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">We're Going on a Bear Hunt</div>
+          <div class="vmeta">YouTube · English</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(12)">
+        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/jgWqSjgMAtw/mqdefault.jpg')">
+          
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">Fraction Basics</div>
+          <div class="vmeta">YouTube · English</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(13)">
+        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/IyYx_ZM5lyw/mqdefault.jpg')">
+          
+          <span class="vdur">16min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">Scratch Plants Vs Zombies - Beginner Tutorial</div>
+          <div class="vmeta">YouTube · English</div>
+        </div>
+      </div>
+  </section>
+
+  <div class="ftr">
+    <div class="total">⏱ 总时长 63分钟 · 14个视频</div>
+    <a class="ftr-link" href="index.html">📚 往日片单</a>
+  </div>
+  <div style="height:72px"></div>
+</div>
+
+<div class="sticky-cta" id="sticky-cta">
+  <button class="sticky-btn sticky-btn-p" onclick="showQuiz()">▶ 开始看</button>
+  <a class="sticky-btn sticky-btn-s" href="index.html">📚 往日片单</a>
+</div>
+
+<div id="quiz">
+  <div class="quiz-scroll">
+    <div class="quiz-hdr">
+      <div class="quiz-hdr-icon">📰</div>
+      <div class="quiz-hdr-title">大宝哥，这是你的今日头条</div>
+      <div class="quiz-hdr-sub">先看看今天发生了什么，再开始视频吧！</div>
+      <div class="quiz-hdr-progress" id="quiz-progress"></div>
+    </div>
+    <div class="quiz-sections" id="quiz-sections"></div>
+    <div class="quiz-challenge-lock" id="quiz-lock">
+      <div class="lock-icon">🔒</div>
+      <div>读完上面的新闻就能解锁脑力热身啦</div>
+    </div>
+    <div class="quiz-challenge locked" id="quiz-challenge">
+      <div class="quiz-emoji">🧠</div>
+      <div class="quiz-label">脑力热身</div>
+      <div class="quiz-q" id="quiz-q"></div>
+      <div class="quiz-btns" id="quiz-btns">
+        <button class="quiz-btn quiz-btn-tell" onclick="quizReveal()">👀 查看答案</button>
+      </div>
+      <div class="quiz-ans" id="quiz-ans">
+        <div class="quiz-ans-label">💡 答案</div>
+        <div id="quiz-ans-body"></div>
+      </div>
+      <div class="quiz-reading-hint" id="quiz-reading-hint" style="display:none">认真读一读答案...</div>
+      <button class="quiz-go" id="quiz-go" onclick="quizStart()">▶ 开始看视频！</button>
+    </div>
+    <div class="nq" id="nq">
+      <div id="nq-test">
+        <div class="nq-emoji">📝</div>
+        <div class="nq-title">新闻小测验</div>
+        <div class="nq-progress" id="nq-progress"></div>
+        <div class="nq-q" id="nq-q"></div>
+        <div class="nq-opts" id="nq-opts"></div>
+        <div class="nq-feedback" id="nq-feedback"></div>
+        <button class="nq-next" id="nq-next" onclick="nqNext()">下一题 →</button>
+      </div>
+      <div id="nq-score" style="display:none"></div>
+      <div id="nq-review" style="display:none"></div>
+    </div>
+    <div style="height:40px"></div>
+  </div>
+</div>
+
+<div id="play">
+  <div class="p-hdr">
+    <button class="p-back" onclick="history.back()">← 返回</button>
+    <span class="p-cnt" id="pcnt">1/14</span>
+  </div>
+  <div class="p-player" id="p-player"></div>
+  <div class="p-quick-nav" id="qnav">
+    <button class="qn-btn" id="qprev" onclick="prevVideo()">⬅ 上一个</button>
+    <span class="qn-cnt" id="qcnt"></span>
+    <button class="qn-btn" id="qnext" onclick="nextVideo()">下一个 ➡</button>
+  </div>
+  <div class="p-np">
+    <h3 id="npt"></h3>
+    <div class="p-np-meta" id="npm"></div>
+    <a class="p-np-link" id="npl" href="#" target="_blank">如果无法播放，点此在原平台观看 ↗</a>
+  </div>
+  <div class="p-list">
+    <div class="p-list-label">播放列表</div>
+    
+    <div class="pli" id="pli-0" onclick="playVideo(0)">
+      <span class="pli-st" id="pli-st-0">○</span>
+      <div class="pli-info">
+        <div class="pli-t">64 爱因斯坦的故事【科普人物故事】</div>
+        <div class="pli-m">爱因斯坦的故事 · 5min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-1" onclick="playVideo(1)">
+      <span class="pli-st" id="pli-st-1">○</span>
+      <div class="pli-info">
+        <div class="pli-t">下雨是如何形成的？跟云朵有何关系？</div>
+        <div class="pli-m">天气科普 · 1min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-2" onclick="playVideo(2)">
+      <span class="pli-st" id="pli-st-2">○</span>
+      <div class="pli-info">
+        <div class="pli-t">华夏诞生</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-3" onclick="playVideo(3)">
+      <span class="pli-st" id="pli-st-3">○</span>
+      <div class="pli-info">
+        <div class="pli-t">统一战争</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-4" onclick="playVideo(4)">
+      <span class="pli-st" id="pli-st-4">○</span>
+      <div class="pli-info">
+        <div class="pli-t">三皇五帝</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-5" onclick="playVideo(5)">
+      <span class="pli-st" id="pli-st-5">○</span>
+      <div class="pli-info">
+        <div class="pli-t">大禹建国</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-6" onclick="playVideo(6)">
+      <span class="pli-st" id="pli-st-6">○</span>
+      <div class="pli-info">
+        <div class="pli-t">夏家天下</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-7" onclick="playVideo(7)">
+      <span class="pli-st" id="pli-st-7">○</span>
+      <div class="pli-info">
+        <div class="pli-t">少康复国</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-8" onclick="playVideo(8)">
+      <span class="pli-st" id="pli-st-8">○</span>
+      <div class="pli-info">
+        <div class="pli-t">商汤灭夏</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-9" onclick="playVideo(9)">
+      <span class="pli-st" id="pli-st-9">○</span>
+      <div class="pli-info">
+        <div class="pli-t">How To Draw A Spinosaurus Dinosaur</div>
+        <div class="pli-m">儿童绘画教室 · 8min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-10" onclick="playVideo(10)">
+      <span class="pli-st" id="pli-st-10">○</span>
+      <div class="pli-info">
+        <div class="pli-t">How To Draw A TacoSaurus</div>
+        <div class="pli-m">儿童绘画教室 · 7min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-11" onclick="playVideo(11)">
+      <span class="pli-st" id="pli-st-11">○</span>
+      <div class="pli-info">
+        <div class="pli-t">We're Going on a Bear Hunt</div>
+        <div class="pli-m">Free Choice A · 15min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-12" onclick="playVideo(12)">
+      <span class="pli-st" id="pli-st-12">○</span>
+      <div class="pli-info">
+        <div class="pli-t">Fraction Basics</div>
+        <div class="pli-m">Free Choice B · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-13" onclick="playVideo(13)">
+      <span class="pli-st" id="pli-st-13">○</span>
+      <div class="pli-info">
+        <div class="pli-t">Scratch Plants Vs Zombies - Beginner Tutorial</div>
+        <div class="pli-m">Free Choice C · 16min</div>
+      </div>
+    </div>
+  </div>
+  <div class="p-nav" id="pnav">
+    <button class="nbtn nbtn-prev" id="bprev" onclick="prevVideo()">⬅ 上一个</button>
+    <button class="nbtn nbtn-next" id="bnext" onclick="nextVideo()">下一个 ➡</button>
+  </div>
+  <div class="p-done" id="pdone">
+    <h3>🎉 全部看完啦！</h3>
+    <p>太棒了，今天的视频都看完了</p>
+    <a class="share" href="https://wa.me/65XXXXXXXX?text=%E5%A4%A7%E5%AE%9D%E5%93%A5%E4%BB%8A%E5%A4%A9%E7%9A%84%E8%A7%86%E9%A2%91%E9%83%BD%E7%9C%8B%E5%AE%8C%E5%95%A6%20%E2%9C%85%20(2026%E5%B9%B43%E6%9C%8815%E6%97%A5%20%E5%91%A8%E6%97%A5)" target="_blank">📱 告诉爸爸妈妈</a>
+  </div>
+</div>
+
+<!-- Interstitial between videos -->
+<div id="inter">
+  <div class="inter-emoji" id="inter-emoji">👀</div>
+  <div class="inter-title" id="inter-title">眼睛休息一下</div>
+  <div class="inter-tip" id="inter-tip">看看远处的绿色植物，让眼睛放松放松</div>
+  <div class="inter-timer" id="inter-timer">1:00</div>
+  <div class="inter-timer-lbl" id="inter-timer-lbl">让眼睛和大脑休息一下</div>
+  <div class="inter-bar"><div class="inter-bar-fill" id="inter-bar-fill"></div></div>
+  <div class="inter-next-box" id="inter-next-box">
+    <div class="inter-next-lbl">接下来看</div>
+    <div class="inter-next-t" id="inter-next-t"></div>
+    <div class="inter-next-m" id="inter-next-m"></div>
+  </div>
+  <button class="inter-btn" id="inter-btn" disabled>休息一下... (10)</button>
+  <div class="inter-prog" id="inter-prog"></div>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+(function(){
+  var V=[{"title":"64 爱因斯坦的故事【科普人物故事】","series":"爱因斯坦的故事","embed":"https://player.bilibili.com/player.html?bvid=BV19Y411U7Kg&page=1&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/video/BV19Y411U7Kg/","platform":"Bilibili","lang":"中文","dur":5,"ep":"","ytId":""},{"title":"下雨是如何形成的？跟云朵有何关系？","series":"天气科普","embed":"https://player.bilibili.com/player.html?bvid=BV1FTKNz1Ed9&page=1&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/video/BV1FTKNz1Ed9/","platform":"Bilibili","lang":"中文","dur":1,"ep":"","ytId":""},{"title":"华夏诞生","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=246674&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep246674","platform":"Bilibili","lang":"中文","dur":4,"ep":"第 1 集","ytId":""},{"title":"统一战争","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=246803&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep246803","platform":"Bilibili","lang":"中文","dur":4,"ep":"第 2 集","ytId":""},{"title":"三皇五帝","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=248719&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep248719","platform":"Bilibili","lang":"中文","dur":4,"ep":"第 3 集","ytId":""},{"title":"大禹建国","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=249626&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep249626","platform":"Bilibili","lang":"中文","dur":4,"ep":"第 4 集","ytId":""},{"title":"夏家天下","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=250584&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep250584","platform":"Bilibili","lang":"中文","dur":4,"ep":"第 5 集","ytId":""},{"title":"少康复国","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=251075&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep251075","platform":"Bilibili","lang":"中文","dur":4,"ep":"第 6 集","ytId":""},{"title":"商汤灭夏","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=251537&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep251537","platform":"Bilibili","lang":"中文","dur":4,"ep":"第 7 集","ytId":""},{"title":"How To Draw A Spinosaurus Dinosaur","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/xgWR6r3_lRo?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=xgWR6r3_lRo","platform":"YouTube","lang":"English","dur":8,"ep":"","ytId":"xgWR6r3_lRo"},{"title":"How To Draw A TacoSaurus","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/clDh6CsrMK8?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=clDh6CsrMK8","platform":"YouTube","lang":"English","dur":7,"ep":"","ytId":"clDh6CsrMK8"},{"title":"We're Going on a Bear Hunt","series":"Free Choice A","embed":"https://www.youtube.com/embed/KAT5NiWHFIU?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=KAT5NiWHFIU","platform":"YouTube","lang":"English","dur":15,"ep":"","ytId":"KAT5NiWHFIU"},{"title":"Fraction Basics","series":"Free Choice B","embed":"https://www.youtube.com/embed/jgWqSjgMAtw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=jgWqSjgMAtw","platform":"YouTube","lang":"English","dur":4,"ep":"","ytId":"jgWqSjgMAtw"},{"title":"Scratch Plants Vs Zombies - Beginner Tutorial","series":"Free Choice C","embed":"https://www.youtube.com/embed/IyYx_ZM5lyw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=IyYx_ZM5lyw","platform":"YouTube","lang":"English","dur":16,"ep":"","ytId":"IyYx_ZM5lyw"}];
+  var ci=-1,watched={},SK='kidstv_2026-03-15',quizDone=false;
+  var ytP=null,bT=null,cT=null,biliPop=null,popT=null;
+  var SHARE='https://wa.me/65XXXXXXXX?text=%E5%A4%A7%E5%AE%9D%E5%93%A5%E4%BB%8A%E5%A4%A9%E7%9A%84%E8%A7%86%E9%A2%91%E9%83%BD%E7%9C%8B%E5%AE%8C%E5%95%A6%20%E2%9C%85%20(2026%E5%B9%B43%E6%9C%8815%E6%97%A5%20%E5%91%A8%E6%97%A5)';
+  var QUIZ_Q="为什么爱因斯坦这么聪明？他的脑子跟别人不一样吗？";
+  var QUIZ_A="爱因斯坦的大脑确实有些特别之处，但更重要的是他永远保持好奇心，喜欢问'如果……会怎样'的问题。每个人都可以通过多问问题、多思考来变得更聪明！";
+  var HL_SECTIONS=[{"icon":"📅","title":"今天是什么日子","content":"3 月 15 日 · 第一学期假期第一天\n昨天是爱因斯坦诞辰纪念日（1879 年 3 月 14 日）\nE=mc² 为什么质量和能量可以互相转换？"},{"icon":"🌍","title":"世界在发生什么","content":"NASA 公布太阳系探索新发现\n科学家在火星和木卫二上寻找生命迹象"},{"icon":"🌤️","title":"新加坡天气","content":"🌦️ 附近有阵雨，26-29°C，体感 34°C\n下雨时为什么先看到闪电后听到雷声？"}];
+  var NQ=[];
+  function escH(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  var REST=[
+    {e:'👀',t:'眼睛休息时间',p:'看看窗外最远处的东西，慢慢数到20，再闭上眼睛放松'},
+    {e:'🧘',t:'活动一下身体',p:'站起来伸个懒腰，扭扭脖子，转转肩膀'},
+    {e:'💧',t:'喝口水吧',p:'去倒杯水喝，保持水分大脑才能转得快'},
+    {e:'🌈',t:'做做眼保健操',p:'闭上眼睛，眼球上下左右慢慢转5圈，再睁开看看远处'},
+    {e:'🏃',t:'动一动吧',p:'原地跳10下，或者做5个深蹲，让血液流动起来'},
+    {e:'🪟',t:'看看窗外的风景',p:'找到窗外最远的一棵树或一栋楼，盯着看20秒'},
+    {e:'🫁',t:'深呼吸时间',p:'闭上眼睛，慢慢吸气4秒，憋住4秒，呼气4秒，做5次'}
+  ];
+
+  function calcRestSecs(){
+    var watchedMin=0;
+    for(var i=0;i<=ci;i++) watchedMin+=V[i].dur;
+    if(watchedMin>=30) return 150;
+    if(watchedMin>=20) return 120;
+    if(watchedMin>=10) return 90;
+    return 60;
+  }
+
+  function fmtTime(s){
+    var m=Math.floor(s/60),sec=s%60;
+    return m+':'+(sec<10?'0':'')+sec;
+  }
+
+  try{var s=localStorage.getItem(SK);if(s)watched=JSON.parse(s)}catch(e){}
+  function save(){try{localStorage.setItem(SK,JSON.stringify(watched))}catch(e){}}
+
+  function updList(){
+    for(var i=0;i<V.length;i++){
+      var el=document.getElementById('pli-'+i),st=document.getElementById('pli-st-'+i);
+      el.className='pli';
+      if(i===ci){el.classList.add('on');st.textContent='▶️'}
+      else if(watched[i]){el.classList.add('done');st.textContent='✅'}
+      else{st.textContent='○'}
+    }
+  }
+
+  function cleanup(){
+    clearTimeout(bT);clearInterval(cT);clearInterval(popT);
+    if(ytP){try{ytP.destroy()}catch(e){}ytP=null}
+    if(biliPop&&!biliPop.closed){try{biliPop.close()}catch(e){}}
+    biliPop=null;
+    document.getElementById('p-player').innerHTML='';
+  }
+
+  window.onYouTubeIframeAPIReady=function(){};
+
+  function hideSticky(){document.getElementById('sticky-cta').style.display='none'}
+  function showSticky(){document.getElementById('sticky-cta').style.display=''}
+
+  var readCount=0,totalSections=0;
+
+  function calcDelay(content){
+    var len=content.length;
+    var secs=Math.max(5,Math.min(12,Math.round(len/10)));
+    return secs*1000;
+  }
+
+  function scheduleBtn(idx,content){
+    var delay=calcDelay(content);
+    setTimeout(function(){
+      var ack=document.getElementById('qack-'+idx);
+      if(!ack)return;
+      ack.innerHTML='<button class="quiz-sec-btn" onclick="markRead('+idx+')">记住了 ✓</button>';
+    },delay);
+  }
+
+  function updProgress(){
+    var el=document.getElementById('quiz-progress');
+    el.innerHTML='<div class="quiz-hdr-progress-inner">📖 已读 <span>'+readCount+'/'+totalSections+'</span></div>';
+  }
+
+  window.markRead=function(idx){
+    var sec=document.getElementById('qsec-'+idx);
+    if(sec.classList.contains('done'))return;
+    sec.classList.add('done');
+    var btn=sec.querySelector('.quiz-sec-btn');
+    btn.textContent='✅ 已读';
+    readCount++;
+    updProgress();
+
+    var nextIdx=idx+1;
+    if(nextIdx<totalSections){
+      var next=document.getElementById('qsec-'+nextIdx);
+      next.classList.remove('locked');
+      next.style.animation='slideUp .4s ease';
+      var nextAck=document.getElementById('qack-'+nextIdx);
+      if(nextAck) nextAck.innerHTML='<span class="quiz-sec-hint">正在阅读...</span>';
+      scheduleBtn(nextIdx,HL_SECTIONS[nextIdx].content);
+      setTimeout(function(){
+        next.scrollIntoView({behavior:'smooth',block:'center'});
+      },150);
+    }
+
+    if(readCount>=totalSections){
+      var challenge=document.getElementById('quiz-challenge');
+      var lock=document.getElementById('quiz-lock');
+      if(QUIZ_Q){
+        lock.style.display='none';
+        challenge.classList.remove('locked');
+        challenge.style.animation='slideUp .5s ease';
+        setTimeout(function(){
+          challenge.scrollIntoView({behavior:'smooth',block:'center'});
+        },200);
+      }else{
+        lock.innerHTML='<div class="lock-icon">🎉</div><div>新闻都读完啦！</div>';
+        var goBtn=document.createElement('button');
+        goBtn.className='quiz-go show';
+        goBtn.style.marginTop='16px';
+        goBtn.textContent='▶ 开始看视频！';
+        goBtn.onclick=function(){quizStart()};
+        lock.appendChild(goBtn);
+        setTimeout(function(){
+          lock.scrollIntoView({behavior:'smooth',block:'center'});
+        },200);
+      }
+    }
+  };
+
+  window.showQuiz=function(){
+    if(!QUIZ_Q&&!HL_SECTIONS.length&&!NQ.length){quizDone=true;enterPlayMode(0);return}
+    readCount=0;
+    totalSections=HL_SECTIONS.length;
+
+    var secEl=document.getElementById('quiz-sections');
+    secEl.innerHTML='';
+    for(var i=0;i<HL_SECTIONS.length;i++){
+      var s=HL_SECTIONS[i];
+      var div=document.createElement('div');
+      div.className='quiz-sec'+(i>0?' locked':'');
+      div.id='qsec-'+i;
+      div.innerHTML='<div class="quiz-sec-top"><div class="quiz-sec-icon">'+escH(s.icon)+'</div>'+
+        '<div class="quiz-sec-body"><div class="quiz-sec-title">'+escH(s.title)+'</div>'+
+        '<div class="quiz-sec-content"><div class="quiz-sec-text">'+escH(s.content).replace(/\n/g,'<br>')+'</div></div></div></div>'+
+        '<div class="quiz-sec-lock">👆 先读完上一条</div>'+
+        '<div class="quiz-sec-ack" id="qack-'+i+'"><span class="quiz-sec-hint">正在阅读...</span></div>';
+      secEl.appendChild(div);
+      if(i===0) scheduleBtn(i,s.content);
+    }
+    updProgress();
+
+    if(QUIZ_Q){
+      document.getElementById('quiz-q').textContent='"'+QUIZ_Q+'"';
+      document.getElementById('quiz-ans-body').textContent=QUIZ_A;
+      document.getElementById('quiz-btns').style.display='';
+      document.getElementById('quiz-ans').classList.remove('show');
+      document.getElementById('quiz-go').classList.remove('show');
+      document.getElementById('quiz-reading-hint').style.display='none';
+      document.getElementById('quiz-challenge').style.display='';
+      document.getElementById('quiz-challenge').classList.add('locked');
+      document.getElementById('quiz-lock').style.display='';
+      document.getElementById('quiz-lock').innerHTML='<div class="lock-icon">🔒</div><div>读完上面的新闻就能解锁脑力热身啦</div>';
+    }else{
+      document.getElementById('quiz-challenge').style.display='none';
+      document.getElementById('quiz-lock').style.display='';
+      document.getElementById('quiz-lock').innerHTML='<div class="lock-icon">🔒</div><div>读完新闻即可开始看视频</div>';
+    }
+    document.getElementById('quiz').classList.add('show');
+    document.getElementById('browse').style.display='none';
+    document.body.style.overflow='hidden';
+    hideSticky();
+  };
+
+  window.quizReveal=function(){
+    document.getElementById('quiz-btns').style.display='none';
+    document.getElementById('quiz-ans').classList.add('show');
+    var hint=document.getElementById('quiz-reading-hint');
+    hint.style.display='';
+    var goBtn=document.getElementById('quiz-go');
+    goBtn.classList.remove('show');
+
+    setTimeout(function(){
+      document.getElementById('quiz-ans').scrollIntoView({behavior:'smooth',block:'start'});
+    },100);
+
+    var ansLen=QUIZ_A.length;
+    var delay=Math.max(8,Math.min(15,Math.round(ansLen/8)))*1000;
+    setTimeout(function(){
+      hint.style.display='none';
+      if(NQ.length>0){
+        goBtn.textContent='📝 开始新闻小测验';
+        goBtn.onclick=function(){showNewsQuiz()};
+      }
+      goBtn.classList.add('show');
+      setTimeout(function(){
+        goBtn.scrollIntoView({behavior:'smooth',block:'center'});
+      },100);
+    },delay);
+  };
+
+  var nqIdx=0;
+  var LETTERS=['A','B','C','D','E','F'];
+  var nqAnswers=[];
+  var nqWrong=[];
+  var nqRound=1;
+  var nqActiveSet=[];
+  var revAcked=0;
+
+  window.showNewsQuiz=function(){
+    nqIdx=0;
+    nqAnswers=[];
+    nqWrong=[];
+    nqRound=1;
+    nqActiveSet=NQ.map(function(_,i){return i});
+    document.getElementById('nq-test').style.display='';
+    document.getElementById('nq-score').style.display='none';
+    document.getElementById('nq-review').style.display='none';
+    var el=document.getElementById('nq');
+    el.classList.add('show');
+    document.getElementById('quiz-go').classList.remove('show');
+    renderNQ();
+    setTimeout(function(){
+      el.scrollIntoView({behavior:'smooth',block:'center'});
+    },200);
+  };
+
+  function renderNQ(){
+    var realIdx=nqActiveSet[nqIdx];
+    var q=NQ[realIdx];
+    var testEl=document.getElementById('nq-test');
+    if(nqRound>1){
+      testEl.querySelector('.nq-title').textContent='重新答题';
+      testEl.querySelector('.nq-emoji').textContent='🔄';
+    }
+    document.getElementById('nq-progress').innerHTML='第 <span>'+(nqIdx+1)+'</span> / '+nqActiveSet.length+' 题';
+    document.getElementById('nq-q').textContent=(nqIdx+1)+'. '+q.question;
+    document.getElementById('nq-feedback').textContent='';
+    document.getElementById('nq-feedback').className='nq-feedback';
+    document.getElementById('nq-next').classList.remove('show');
+    var optsEl=document.getElementById('nq-opts');
+    optsEl.innerHTML='';
+    var order=q.options.map(function(_,i){return i});
+    if(nqRound>1){
+      for(var s=order.length-1;s>0;s--){
+        var j=Math.floor(Math.random()*(s+1));
+        var tmp=order[s];order[s]=order[j];order[j]=tmp;
+      }
+    }
+    optsEl.setAttribute('data-order',JSON.stringify(order));
+    for(var k=0;k<order.length;k++){
+      var oi=order[k];
+      var btn=document.createElement('div');
+      btn.className='nq-opt';
+      btn.setAttribute('data-idx',oi);
+      btn.innerHTML='<span class="nq-opt-letter">'+LETTERS[k]+'</span><span class="nq-opt-text">'+escH(q.options[oi])+'</span>';
+      btn.onclick=(function(origIdx){return function(){checkNQ(origIdx)}})(oi);
+      optsEl.appendChild(btn);
+    }
+  }
+
+  function checkNQ(selected){
+    var realIdx=nqActiveSet[nqIdx];
+    var q=NQ[realIdx];
+    var opts=document.getElementById('nq-opts').children;
+    var fb=document.getElementById('nq-feedback');
+    var isCorrect=selected===q.answer;
+
+    nqAnswers[nqIdx]={realIdx:realIdx,selected:selected,correct:isCorrect};
+
+    for(var i=0;i<opts.length;i++){
+      var origI=parseInt(opts[i].getAttribute('data-idx'));
+      if(origI===q.answer) opts[i].classList.add('correct');
+    }
+
+    if(isCorrect){
+      fb.textContent='✅ 回答正确！';
+      fb.className='nq-feedback right';
+    }else{
+      for(var i=0;i<opts.length;i++){
+        if(parseInt(opts[i].getAttribute('data-idx'))===selected) opts[i].classList.add('wrong');
+      }
+      fb.textContent='❌ 正确答案是 '+LETTERS[findLetterIdx(q.answer)];
+      fb.className='nq-feedback oops';
+    }
+
+    for(var i=0;i<opts.length;i++) opts[i].classList.add('disabled');
+
+    var nextBtn=document.getElementById('nq-next');
+    if(nqIdx<nqActiveSet.length-1){
+      nextBtn.textContent='下一题 →';
+    }else{
+      nextBtn.textContent='📊 查看成绩';
+    }
+    setTimeout(function(){
+      nextBtn.classList.add('show');
+      nextBtn.scrollIntoView({behavior:'smooth',block:'center'});
+    },1200);
+  }
+
+  function findLetterIdx(answerIdx){
+    var orderStr=document.getElementById('nq-opts').getAttribute('data-order');
+    if(!orderStr) return answerIdx;
+    var order=JSON.parse(orderStr);
+    for(var i=0;i<order.length;i++){if(order[i]===answerIdx) return i}
+    return answerIdx;
+  }
+
+  window.nqNext=function(){
+    nqIdx++;
+    if(nqIdx<nqActiveSet.length){
+      renderNQ();
+      document.getElementById('nq').scrollIntoView({behavior:'smooth',block:'start'});
+    }else{
+      showScoreCard();
+    }
+  };
+
+  function showScoreCard(){
+    document.getElementById('nq-test').style.display='none';
+    var scoreEl=document.getElementById('nq-score');
+    scoreEl.style.display='';
+    scoreEl.innerHTML='';
+
+    nqWrong=[];
+    var correctCount=0;
+    for(var i=0;i<nqAnswers.length;i++){
+      if(nqAnswers[i].correct) correctCount++;
+      else nqWrong.push(nqAnswers[i].realIdx);
+    }
+
+    var allCorrect=nqWrong.length===0;
+    var emoji=allCorrect?'🎉':'📊';
+    var title=allCorrect?'全部答对！太棒了！':'答题结果';
+
+    var html='<div class="nq-score-emoji">'+emoji+'</div>';
+    html+='<div class="nq-score-title">'+title+'</div>';
+    html+='<div class="nq-score-list">';
+    for(var i=0;i<nqAnswers.length;i++){
+      var a=nqAnswers[i];
+      var q=NQ[a.realIdx];
+      html+='<div class="nq-score-item">';
+      html+='<span class="nq-score-icon">'+(a.correct?'✅':'❌')+'</span>';
+      html+='<span class="nq-score-txt">'+escH(q.question)+'</span>';
+      html+='</div>';
+    }
+    html+='</div>';
+
+    if(allCorrect){
+      html+='<div class="nq-score-msg">你已经完全掌握了今天的新闻！</div>';
+      html+='<button class="nq-next show" onclick="quizStart()">▶ 开始看视频！</button>';
+    }else{
+      var wrongN=nqWrong.length;
+      html+='<div class="nq-score-msg">答对 '+correctCount+' / '+nqActiveSet.length+' 题，有 '+wrongN+' 道答错了<br>别担心，我们先回顾一下对应的新闻，然后再试一次 💪</div>';
+      html+='<button class="nq-next show" onclick="startReview()">📖 开始补课</button>';
+    }
+    scoreEl.innerHTML=html;
+    setTimeout(function(){scoreEl.scrollIntoView({behavior:'smooth',block:'start'})},200);
+  }
+
+  window.startReview=function(){
+    document.getElementById('nq-score').style.display='none';
+    var revEl=document.getElementById('nq-review');
+    revEl.style.display='';
+    revEl.innerHTML='';
+    revAcked=0;
+
+    var html='<div class="nq-retry-hdr"><div class="nq-retry-emoji">📖</div>';
+    html+='<div class="nq-retry-title">补课时间</div>';
+    html+='<div class="nq-retry-sub">仔细阅读下面答错的题目相关新闻</div></div>';
+
+    for(var i=0;i<nqWrong.length;i++){
+      var qi=nqWrong[i];
+      var q=NQ[qi];
+      var newsHtml=findRelatedNews(q);
+      html+='<div class="nq-rev-card" id="nq-rev-'+i+'"'+(i>0?' style="opacity:0.4;pointer-events:none"':'')+'>';
+      html+='<div class="nq-rev-q">❌ '+escH(q.question)+'</div>';
+      if(newsHtml) html+='<div class="nq-rev-news">'+newsHtml+'</div>';
+      html+='<div class="nq-rev-correct">✅ 正确答案：'+escH(q.options[q.answer])+'</div>';
+      html+='<div class="nq-rev-ack" id="nq-rev-ack-'+i+'"><span class="quiz-sec-hint">正在阅读...</span></div>';
+      html+='</div>';
+    }
+    html+='<div id="nq-rev-go" style="text-align:center;margin-top:16px;display:none"><button class="nq-next show" onclick="startRetry()">🔄 重新答题</button></div>';
+    revEl.innerHTML=html;
+    setTimeout(function(){revEl.scrollIntoView({behavior:'smooth',block:'start'})},200);
+    scheduleRevBtn(0);
+  };
+
+  function findRelatedNews(q){
+    var qText=q.question.toLowerCase();
+    var correct=q.options[q.answer].toLowerCase();
+    var bestMatch=null;var bestScore=0;var bestType='news';
+
+    for(var s=0;s<HL_SECTIONS.length;s++){
+      var sec=HL_SECTIONS[s];
+      var combined=(sec.title+' '+sec.content).toLowerCase();
+      var score=0;
+      if(combined.indexOf(correct)>=0) score+=3;
+      var words=qText.replace(/[？?]/g,'').split('');
+      for(var w=0;w<words.length;w++){
+        if(words[w].length>1&&combined.indexOf(words[w])>=0) score++;
+      }
+      if(score>bestScore){bestScore=score;bestMatch=sec;bestType='news'}
+    }
+
+    if(QUIZ_Q&&QUIZ_A){
+      var cCombined=(QUIZ_Q+' '+QUIZ_A).toLowerCase();
+      var cScore=0;
+      if(cCombined.indexOf(correct)>=0) cScore+=3;
+      var cWords=qText.replace(/[？?]/g,'').split('');
+      for(var w=0;w<cWords.length;w++){
+        if(cWords[w].length>1&&cCombined.indexOf(cWords[w])>=0) cScore++;
+      }
+      if(cScore>bestScore){bestScore=cScore;bestMatch={icon:'🧠',title:'脑力热身',content:QUIZ_Q+'\n'+QUIZ_A};bestType='curiosity'}
+    }
+
+    if(bestMatch){
+      var label=bestType==='curiosity'?'🧠 脑力热身':'📰 相关新闻';
+      return '<div class="nq-rev-news-title">'+label+'</div><strong>'+escH(bestMatch.icon+' '+bestMatch.title)+'</strong><br>'+escH(bestMatch.content).replace(/\n/g,'<br>');
+    }
+    return '';
+  }
+
+  function scheduleRevBtn(idx){
+    if(idx>=nqWrong.length) return;
+    var qi=nqWrong[idx];
+    var q=NQ[qi];
+    var news=findRelatedNews(q);
+    var textLen=(q.question+' '+(news||'')+' '+q.options[q.answer]).length;
+    var delay=Math.max(6,Math.min(14,Math.round(textLen/12)))*1000;
+    setTimeout(function(){
+      var ack=document.getElementById('nq-rev-ack-'+idx);
+      if(ack) ack.innerHTML='<button class="nq-rev-btn" onclick="revAck('+idx+')">记住了 ✓</button>';
+    },delay);
+  }
+
+  window.revAck=function(idx){
+    var btn=document.getElementById('nq-rev-ack-'+idx);
+    if(btn) btn.innerHTML='<span class="nq-rev-btn done">已确认 ✓</span>';
+    revAcked++;
+    if(idx+1<nqWrong.length){
+      var nextCard=document.getElementById('nq-rev-'+(idx+1));
+      if(nextCard){
+        nextCard.style.opacity='1';nextCard.style.pointerEvents='';
+        var nextAck=document.getElementById('nq-rev-ack-'+(idx+1));
+        if(nextAck) nextAck.innerHTML='<span class="quiz-sec-hint">正在阅读...</span>';
+        scheduleRevBtn(idx+1);
+        setTimeout(function(){nextCard.scrollIntoView({behavior:'smooth',block:'center'})},200);
+      }
+    }
+    if(revAcked>=nqWrong.length){
+      var goEl=document.getElementById('nq-rev-go');
+      if(goEl) goEl.style.display='';
+      setTimeout(function(){goEl.scrollIntoView({behavior:'smooth',block:'center'})},300);
+    }
+  };
+
+  window.startRetry=function(){
+    nqRound++;
+    nqActiveSet=nqWrong.slice();
+    nqIdx=0;
+    nqAnswers=[];
+    document.getElementById('nq-review').style.display='none';
+    document.getElementById('nq-test').style.display='';
+    renderNQ();
+    setTimeout(function(){
+      document.getElementById('nq-test').scrollIntoView({behavior:'smooth',block:'start'});
+    },200);
+  };
+
+  window.quizStart=function(){
+    quizDone=true;
+    document.getElementById('quiz').classList.remove('show');
+    enterPlayMode(0);
+  };
+
+  window.enterPlayMode=function(idx){
+    if(!quizDone&&(QUIZ_Q||HL_SECTIONS.length||NQ.length)){showQuiz();return}
+    document.getElementById('play').classList.add('on');
+    document.getElementById('browse').style.display='none';
+    document.body.style.overflow='hidden';
+    hideSticky();
+    history.pushState({mode:'play',idx:idx},'');
+    playVideo(idx);
+  };
+
+  function doExitPlay(){
+    document.getElementById('play').classList.remove('on');
+    document.getElementById('browse').style.display='';
+    document.body.style.overflow='';
+    document.getElementById('inter').classList.remove('show');
+    cleanup();ci=-1;
+    showSticky();
+  }
+
+  window.exitPlayMode=function(){
+    doExitPlay();
+    try{history.back()}catch(e){}
+  };
+
+  window.addEventListener('popstate',function(){
+    if(document.getElementById('play').classList.contains('on')){
+      doExitPlay();
+    }
+  });
+
+  window.playVideo=function(idx){
+    if(idx<0||idx>=V.length)return;
+    if(ci>=0){watched[ci]=true;save()}
+    ci=idx;var v=V[idx];
+
+    document.getElementById('inter').classList.remove('show');
+    clearInterval(cT);
+
+    document.getElementById('npt').textContent=v.title;
+    document.getElementById('npm').textContent=v.series+' · '+v.platform+' · '+v.lang+' · '+v.dur+'min'+(v.ep?' · '+v.ep:'');
+    document.getElementById('npl').href=v.url;
+    var cnt=(idx+1)+'/'+V.length;
+    var isFirst=idx===0;
+    var last=idx===V.length-1;
+    document.getElementById('pcnt').textContent=cnt;
+    document.getElementById('bprev').disabled=isFirst;
+    document.getElementById('bnext').textContent=last?'✅ 全部看完，返回首页':'下一个 ➡';
+    document.getElementById('qcnt').textContent=cnt;
+    document.getElementById('qprev').disabled=isFirst;
+    document.getElementById('qnext').textContent=last?'✅ 全部看完，返回首页':'下一个 ➡';
+    document.getElementById('qnext').disabled=false;
+    document.getElementById('pdone').classList.remove('show');
+    document.getElementById('pnav').style.display='';
+    updList();
+
+    cleanup();
+    var container=document.getElementById('p-player');
+
+    if(v.ytId&&window.YT&&window.YT.Player){
+      var d=document.createElement('div');d.id='yt-p';
+      container.appendChild(d);
+      ytP=new YT.Player('yt-p',{
+        videoId:v.ytId,width:'100%',height:'100%',
+        playerVars:{rel:0,modestbranding:1,playsinline:1},
+        events:{onStateChange:function(e){if(e.data===0)showInter()}}
+      });
+    }else if(v.platform==='Bilibili'){
+      var p=document.createElement('div');p.className='bili-panel';p.id='bili-panel';
+      p.innerHTML='<div class="bili-emoji">🎬</div>'+
+        '<div class="bili-title">'+escH(v.title)+'</div>'+
+        '<div class="bili-meta">'+escH(v.series)+' · '+v.lang+' · '+v.dur+'min'+(v.ep?' · '+escH(v.ep):'')+'</div>'+
+        '<button class="bili-btn-hd" onclick="openBili()">▶ 进入哔哩哔哩看高清</button>'+
+        '<button class="bili-btn-embed" onclick="embedBili()">在这里播放 (可能为低清)</button>'+
+        '<div class="bili-hint">已登录B站可观看高清<br>看完后关闭窗口即可回到这里</div>';
+      container.appendChild(p);
+    }else{
+      var f=document.createElement('iframe');
+      f.src=v.embed;f.allow='autoplay;fullscreen;encrypted-media';
+      f.allowFullscreen=true;f.style.cssText='width:100%;height:100%;border:none';
+      container.appendChild(f);
+      bT=setTimeout(showInter,(v.dur*60+15)*1000);
+    }
+
+    var el=document.getElementById('pli-'+idx);
+    if(el)el.scrollIntoView({behavior:'smooth',block:'nearest'});
+  };
+
+  window.openBili=function(){
+    var v=V[ci];
+    biliPop=window.open(v.url,'bilibili','width=1080,height=720,scrollbars=yes');
+    var panel=document.getElementById('bili-panel');
+    if(panel){
+      panel.innerHTML='<div class="bili-emoji" style="animation:pulse 2s infinite">📺</div>'+
+        '<div class="bili-title">正在B站窗口播放中...</div>'+
+        '<div class="bili-meta">'+escH(v.title)+'</div>'+
+        '<div class="bili-hint">看完后关闭B站窗口<br>就会自动回到这里 🔄</div>'+
+        '<button class="bili-btn-embed" onclick="biliDone()" style="margin-top:20px;border-color:#666;color:#ccc">✅ 我看完了</button>';
+    }
+    clearInterval(popT);
+    popT=setInterval(function(){
+      if(biliPop&&biliPop.closed){
+        clearInterval(popT);biliPop=null;
+        showInter();
+      }
+    },1000);
+  };
+
+  window.embedBili=function(){
+    var v=V[ci];
+    var container=document.getElementById('p-player');
+    container.innerHTML='';
+    var f=document.createElement('iframe');
+    f.src=v.embed;f.allow='autoplay;fullscreen;encrypted-media';
+    f.allowFullscreen=true;f.style.cssText='width:100%;height:100%;border:none';
+    container.appendChild(f);
+    bT=setTimeout(showInter,(v.dur*60+15)*1000);
+  };
+
+  window.biliDone=function(){
+    clearInterval(popT);
+    if(biliPop&&!biliPop.closed){try{biliPop.close()}catch(e){}}
+    biliPop=null;
+    showInter();
+  };
+
+  function showInter(){
+    watched[ci]=true;save();
+    var last=ci===V.length-1;
+    var r=REST[Math.floor(Math.random()*REST.length)];
+
+    document.getElementById('inter-emoji').textContent=r.e;
+    document.getElementById('inter-title').textContent=r.t;
+    document.getElementById('inter-tip').textContent=r.p;
+    document.getElementById('inter-prog').textContent='已完成 '+(ci+1)+'/'+V.length;
+
+    var btn=document.getElementById('inter-btn');
+    var nbox=document.getElementById('inter-next-box');
+
+    if(last){
+      nbox.style.display='none';
+      btn.className='inter-btn inter-btn-share';
+      btn.textContent='🎉 全部看完啦！告诉爸爸妈妈';
+      btn.disabled=false;
+      btn.onclick=function(){window.open(SHARE,'_blank')};
+      for(var i=0;i<V.length;i++){
+        document.getElementById('pli-'+i).className='pli done';
+        document.getElementById('pli-st-'+i).textContent='✅';
+      }
+      document.getElementById('pnav').style.display='none';
+    }else{
+      var nv=V[ci+1];
+      nbox.style.display='';
+      document.getElementById('inter-next-t').textContent=nv.title;
+      document.getElementById('inter-next-m').textContent=nv.series+' · '+nv.dur+'min';
+      btn.className='inter-btn';
+
+      var totalRest=calcRestSecs();
+      var count=totalRest;
+      var watchedMin=0;
+      for(var i=0;i<=ci;i++) watchedMin+=V[i].dur;
+      document.getElementById('inter-timer').textContent=fmtTime(count);
+      document.getElementById('inter-timer-lbl').textContent='已看'+watchedMin+'分钟 · 休息'+fmtTime(totalRest);
+      document.getElementById('inter-bar-fill').style.width='0%';
+
+      btn.disabled=true;
+      btn.textContent='休息中...';
+      btn.onclick=function(){
+        document.getElementById('inter').classList.remove('show');
+        clearInterval(cT);
+        playVideo(ci+1);
+      };
+      clearInterval(cT);
+      cT=setInterval(function(){
+        count--;
+        var pct=Math.round(((totalRest-count)/totalRest)*100);
+        document.getElementById('inter-timer').textContent=fmtTime(count);
+        document.getElementById('inter-bar-fill').style.width=pct+'%';
+        if(count<=0){
+          clearInterval(cT);
+          document.getElementById('inter-timer').textContent='0:00';
+          document.getElementById('inter-bar-fill').style.width='100%';
+          btn.disabled=false;
+          btn.textContent='▶ 看下一个视频';
+        }
+      },1000);
+    }
+
+    updList();
+    document.getElementById('inter').classList.add('show');
+  }
+
+  window.prevVideo=function(){if(ci>0)playVideo(ci-1)};
+  window.nextVideo=function(){
+    if(ci<V.length-1){playVideo(ci+1)}
+    else{
+      watched[ci]=true;save();
+      exitPlayMode();
+    }
+  };
+})();
+</script>
+</body>
+</html>
