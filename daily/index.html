@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>iKids 儿童视频频道</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px}
+.loader{text-align:center}
+.spinner{width:48px;height:48px;border:4px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.text{font-size:16px;opacity:.9}
+</style>
+</head>
+<body>
+<div class="loader">
+  <div class="spinner"></div>
+  <div class="text">加载中...</div>
+</div>
+<script>
+(async function() {
+  const params = new URLSearchParams(window.location.search);
+  
+  // 场景 1: ?list → 显示历史列表
+  if (params.has('list')) {
+    window.location.href = '../index.html';
+    return;
+  }
+  
+  // 场景 2: ?d=YYYY-MM-DD → 跳转到指定日期
+  const targetDate = params.get('d');
+  if (targetDate) {
+    try {
+      const mapRes = await fetch('../date-map.json');
+      const dateMap = await mapRes.json();
+      
+      // 直接查找完整日期
+      if (dateMap[targetDate]) {
+        window.location.href = '../' + dateMap[targetDate];
+        return;
+      }
+      
+      // 如果找不到，降级到最新内容
+      console.warn('Date not found:', targetDate, '- redirecting to latest');
+    } catch (e) {
+      console.error('Failed to load date map:', e);
+    }
+  }
+  
+  // 场景 3: 无参数或找不到指定日期 → 跳转到最新内容
+  try {
+    const mapRes = await fetch('../date-map.json');
+    const dateMap = await mapRes.json();
+    
+    // 获取所有完整日期格式的 key (YYYY-MM-DD)，排序后取最新
+    const dates = Object.keys(dateMap)
+      .filter(k => k.includes('-'))
+      .sort()
+      .reverse();
+    
+    if (dates.length > 0) {
+      window.location.href = '../' + dateMap[dates[0]];
+      return;
+    }
+  } catch (e) {
+    console.error('Failed to load latest:', e);
+  }
+  
+  // 降级到首页
+  window.location.href = '../index.html';
+})();
+</script>
+</body>
+</html>

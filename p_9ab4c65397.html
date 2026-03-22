@@ -433,6 +433,28 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 .fab-comm{position:fixed;bottom:90px;right:16px;z-index:800;width:52px;height:52px;border-radius:50%;background:var(--grad);color:#fff;border:none;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;transition:transform .15s;-webkit-tap-highlight-color:transparent}
 .fab-comm:active{transform:scale(.9)}
 
+/* ===== DEBUG TOOLS ===== */
+.debug-panel{position:fixed;top:12px;left:12px;z-index:1600;display:flex;flex-direction:column;gap:8px;max-width:calc(100vw - 24px)}
+.debug-toggle{align-self:flex-start;padding:8px 14px;border:none;border-radius:999px;background:rgba(18,18,18,.9);color:#fff;font-size:12px;font-weight:700;letter-spacing:1px;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .12s,opacity .2s}
+.debug-toggle:active{transform:scale(.96)}
+.debug-card{display:none;width:min(320px,calc(100vw - 24px));background:rgba(18,18,18,.94);color:#fff;border-radius:18px;padding:14px;box-shadow:0 12px 40px rgba(0,0,0,.26);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.debug-panel.open .debug-card{display:block}
+.debug-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.debug-title{font-size:13px;font-weight:700;letter-spacing:.4px}
+.debug-stage{font-size:12px;color:rgba(255,255,255,.72);line-height:1.5;text-align:right}
+.debug-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.debug-btn{padding:10px 8px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:transform .12s,background .15s,border-color .15s;white-space:nowrap}
+.debug-btn:active{transform:scale(.96)}
+.debug-btn.active{background:var(--grad);border-color:transparent}
+.debug-video{display:flex;align-items:center;gap:8px;margin-top:10px}
+.debug-video-label{font-size:12px;color:rgba(255,255,255,.72);white-space:nowrap}
+.debug-video-step{width:32px;height:32px;border:none;border-radius:10px;background:rgba(255,255,255,.08);color:#fff;font-size:18px;cursor:pointer;transition:transform .12s,background .15s}
+.debug-video-step:active{transform:scale(.94)}
+.debug-video-input{width:60px;padding:7px 8px;border-radius:10px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-weight:700;text-align:center;outline:none}
+.debug-video-input:focus{border-color:rgba(255,255,255,.38)}
+.debug-video-total{font-size:12px;color:rgba(255,255,255,.6)}
+.debug-hint{margin-top:10px;font-size:11px;color:rgba(255,255,255,.5);line-height:1.5}
+
 /* ===== QUIZ DONE TRANSITION ===== */
 #quiz-done{position:fixed;inset:0;z-index:1050;background:var(--grad);display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:#fff;padding:24px;overflow:hidden}
 #quiz-done.show{display:flex}
@@ -477,8 +499,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 .img-preview{position:fixed;inset:0;z-index:2300;background:rgba(0,0,0,.85);display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px}
 .img-preview.show{display:flex}
 .img-preview-hint{color:#fff;font-size:15px;font-weight:600;margin-bottom:16px;text-align:center;line-height:1.6}
-.img-preview-wrap{max-width:340px;width:100%;max-height:60vh;overflow:auto;border-radius:12px;background:#fff}
-.img-preview-wrap img{width:100%;display:block}
+.lc-export-host{position:fixed;left:-99999px;top:0;pointer-events:none;opacity:0}
+.lc-share-stage{width:396px;padding:16px;background:radial-gradient(circle at top right,rgba(255,255,255,.28) 0%,rgba(255,255,255,0) 34%),linear-gradient(180deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,.05) 100%),var(--grad)}
+.lc-share-stage-shell{padding:6px;background:rgba(255,255,255,.18)}
+.lc-share-stage .lc-card{box-shadow:0 12px 28px rgba(0,0,0,.14)}
+.img-preview-wrap{max-width:396px;width:100%;max-height:60vh;overflow:auto;border-radius:12px;background:transparent}
+.img-preview-wrap img{width:100%;display:block;box-shadow:0 16px 44px rgba(0,0,0,.28)}
 .img-preview-actions{margin-top:16px;display:flex;gap:10px}
 .img-preview-btn{padding:12px 24px;border-radius:12px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:transform .1s;-webkit-tap-highlight-color:transparent}
 .img-preview-btn:active{transform:scale(.95)}
@@ -565,8 +591,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     <div class="sec-title">📺 今日片单</div>
     <div class="slot-label">📺 主系列 · 如果历史是一群喵</div>
       <div class="vcard" onclick="enterPlayMode(0)">
-        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
-          <span class="thumb-icon">B</span>
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -576,8 +602,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(1)">
-        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
-          <span class="thumb-icon">B</span>
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -587,8 +613,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(2)">
-        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
-          <span class="thumb-icon">B</span>
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -598,8 +624,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(3)">
-        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
-          <span class="thumb-icon">B</span>
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -609,8 +635,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(4)">
-        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
-          <span class="thumb-icon">B</span>
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -620,8 +646,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(5)">
-        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
-          <span class="thumb-icon">B</span>
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -631,8 +657,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(6)">
-        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
-          <span class="thumb-icon">B</span>
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -1115,9 +1141,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 (function(){
-  var DEV=new URLSearchParams(window.location.search).has('dev');
-  if(DEV) document.addEventListener('DOMContentLoaded',function(){var b=document.createElement('div');b.textContent='DEV';b.style.cssText='position:fixed;top:8px;right:8px;background:#ff5722;color:#fff;padding:2px 10px;border-radius:4px;font-size:12px;z-index:99999;opacity:0.85;pointer-events:none;font-weight:bold;letter-spacing:1px';document.body.appendChild(b)});
-  var V=[{"title":"大器晚成","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260613&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260613","platform":"Bilibili","lang":"中文","dur":4,"ep":"第15集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"一鸣惊人","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260614&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260614","platform":"Bilibili","lang":"中文","dur":4,"ep":"第16集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"威震东南","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260615&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260615","platform":"Bilibili","lang":"中文","dur":4,"ep":"第17集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"吴越相争","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261513&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261513","platform":"Bilibili","lang":"中文","dur":4,"ep":"第18集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"三家分晋","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261515&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261515","platform":"Bilibili","lang":"中文","dur":4,"ep":"第19集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"商鞅变法","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261516&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261516","platform":"Bilibili","lang":"中文","dur":4,"ep":"第20集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"六国合纵","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=262923&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep262923","platform":"Bilibili","lang":"中文","dur":4,"ep":"第21集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"How To Draw A Spinosaurus Dinosaur","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/xgWR6r3_lRo?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=xgWR6r3_lRo","platform":"YouTube","lang":"English","dur":8,"ep":"第1集/共2集","ytId":"xgWR6r3_lRo","bangumi":false,"biliCover":""},{"title":"How To Draw A TacoSaurus","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/clDh6CsrMK8?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=clDh6CsrMK8","platform":"YouTube","lang":"English","dur":7,"ep":"第2集/共2集","ytId":"clDh6CsrMK8","bangumi":false,"biliCover":""},{"title":"We're Going on a Bear Hunt","series":"宇宙儿童瑜伽冒险","embed":"https://www.youtube.com/embed/KAT5NiWHFIU?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=KAT5NiWHFIU","platform":"YouTube","lang":"English","dur":15,"ep":"选看","ytId":"KAT5NiWHFIU","bangumi":false,"biliCover":""},{"title":"Fraction Basics","series":"可汗学院数学","embed":"https://www.youtube.com/embed/jgWqSjgMAtw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=jgWqSjgMAtw","platform":"YouTube","lang":"English","dur":4,"ep":"选看","ytId":"jgWqSjgMAtw","bangumi":false,"biliCover":""},{"title":"Scratch Plants Vs Zombies - Beginner Tutorial","series":"Scratch 编程入门","embed":"https://www.youtube.com/embed/IyYx_ZM5lyw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=IyYx_ZM5lyw","platform":"YouTube","lang":"English","dur":16,"ep":"选看","ytId":"IyYx_ZM5lyw","bangumi":false,"biliCover":""}];
+  var QS=new URLSearchParams(window.location.search);
+  var DEV=QS.has('dev');
+  var DEBUG_PARAM=QS.get('debug');
+  var DEBUG_MODE=DEBUG_PARAM!==null;
+  var FAST_MODE=DEV||DEBUG_MODE;
+  var FAST_LABEL=DEBUG_MODE?'DEBUG':'DEV';
+  var DEBUG_STAGE=normalizeDebugStage(QS.get('stage')||DEBUG_PARAM||'');
+  var DEBUG_VIDEO=parseDebugVideo(QS.get('video'));
+  if(DEV&&!DEBUG_MODE) showModeBadge('DEV');
+  var V=[{"title":"大器晚成","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260613&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260613","platform":"Bilibili","lang":"中文","dur":4,"ep":"第15集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"一鸣惊人","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260614&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260614","platform":"Bilibili","lang":"中文","dur":4,"ep":"第16集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"威震东南","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260615&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260615","platform":"Bilibili","lang":"中文","dur":4,"ep":"第17集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"吴越相争","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261513&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261513","platform":"Bilibili","lang":"中文","dur":4,"ep":"第18集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"三家分晋","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261515&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261515","platform":"Bilibili","lang":"中文","dur":4,"ep":"第19集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"商鞅变法","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261516&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261516","platform":"Bilibili","lang":"中文","dur":4,"ep":"第20集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"六国合纵","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=262923&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep262923","platform":"Bilibili","lang":"中文","dur":4,"ep":"第21集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"How To Draw A Spinosaurus Dinosaur","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/xgWR6r3_lRo?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=xgWR6r3_lRo","platform":"YouTube","lang":"English","dur":8,"ep":"第1集/共2集","ytId":"xgWR6r3_lRo","bangumi":false,"biliCover":""},{"title":"How To Draw A TacoSaurus","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/clDh6CsrMK8?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=clDh6CsrMK8","platform":"YouTube","lang":"English","dur":7,"ep":"第2集/共2集","ytId":"clDh6CsrMK8","bangumi":false,"biliCover":""},{"title":"We're Going on a Bear Hunt","series":"宇宙儿童瑜伽冒险","embed":"https://www.youtube.com/embed/KAT5NiWHFIU?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=KAT5NiWHFIU","platform":"YouTube","lang":"English","dur":15,"ep":"选看","ytId":"KAT5NiWHFIU","bangumi":false,"biliCover":""},{"title":"Fraction Basics","series":"可汗学院数学","embed":"https://www.youtube.com/embed/jgWqSjgMAtw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=jgWqSjgMAtw","platform":"YouTube","lang":"English","dur":4,"ep":"选看","ytId":"jgWqSjgMAtw","bangumi":false,"biliCover":""},{"title":"Scratch Plants Vs Zombies - Beginner Tutorial","series":"Scratch 编程入门","embed":"https://www.youtube.com/embed/IyYx_ZM5lyw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=IyYx_ZM5lyw","platform":"YouTube","lang":"English","dur":16,"ep":"选看","ytId":"IyYx_ZM5lyw","bangumi":false,"biliCover":""}];
   var ci=-1,watched={},SK='kidstv_2026-03-22',quizDone=false;
   var ytP=null,bT=null,cT=null,biliPop=null,popT=null,biliWatchStart=null,biliCdT=null;
   var isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -1143,6 +1176,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   var CF_FIELDS={"name":"entry.1543178764","role":"entry.930812808","age":"entry.1459956221","text":"entry.931998799","page_date":"entry.911812004","timestamp":"entry.1976194980"};
   var CF_SHEET="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOCNGSTR8ygj5-zgQTWspAefGHDbqje6XPH8qhnPXToKW3PBPVoRSad1MAYD2rLyyvC4vU_pAJwFoc/pub?output=csv";
   function escH(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function showModeBadge(label){
+    var b=document.createElement('div');
+    b.textContent=label;
+    b.style.cssText='position:fixed;top:8px;right:8px;background:#ff5722;color:#fff;padding:2px 10px;border-radius:4px;font-size:12px;z-index:99999;opacity:0.85;pointer-events:none;font-weight:bold;letter-spacing:1px';
+    document.body.appendChild(b);
+  }
+  function normalizeDebugStage(raw){
+    var stage=String(raw||'').trim().toLowerCase();
+    if(!stage||stage==='1'||stage==='true'||stage==='on'||stage==='yes') return '';
+    if(stage==='home'||stage==='browse'||stage==='index'||stage==='landing') return 'home';
+    if(stage==='quiz'||stage==='news'||stage==='headline'||stage==='headlines'||stage==='read') return 'quiz';
+    if(stage==='answer'||stage==='answers'||stage==='newsquiz'||stage==='test'||stage==='question'||stage==='questions'||stage==='qa') return 'newsquiz';
+    if(stage==='play'||stage==='player'||stage==='video'||stage==='watch') return 'play';
+    if(stage==='summary'||stage==='done'||stage==='card'||stage==='learn'||stage==='learncard'||stage==='recap') return 'summary';
+    if(stage==='share'||stage==='sharing') return 'share';
+    return '';
+  }
+  function parseDebugVideo(raw){
+    var n=parseInt(raw,10);
+    return isNaN(n)||n<1?1:n;
+  }
   var REST=[
     {e:'👀',t:'眼睛休息时间',p:'看看窗外最远处的东西，慢慢数到20，再闭上眼睛放松'},
     {e:'🧘',t:'活动一下身体',p:'站起来伸个懒腰，扭扭脖子，转转肩膀'},
@@ -1154,7 +1208,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   ];
 
   function calcRestSecs(){
-    if(DEV) return 0;
+    if(FAST_MODE) return 0;
     var watchedMin=0;
     for(var i=0;i<=ci;i++) watchedMin+=V[i].dur;
     if(watchedMin>=30) return 150;
@@ -1170,6 +1224,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 
   try{var s=localStorage.getItem(SK);if(s)watched=JSON.parse(s)}catch(e){}
   function save(){try{localStorage.setItem(SK,JSON.stringify(watched))}catch(e){}}
+  function saveNewsQuizResult(correct,total){
+    try{localStorage.setItem('kidstv_nq_'+PAGE_DATE,JSON.stringify({correct:correct,total:total,updatedAt:new Date().toISOString()}))}catch(e){}
+  }
+  function clearNewsQuizResult(){
+    try{localStorage.removeItem('kidstv_nq_'+PAGE_DATE)}catch(e){}
+  }
 
   function updList(){
     for(var i=0;i<V.length;i++){
@@ -1198,7 +1258,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   var readCount=0,totalSections=0;
 
   function calcDelay(content){
-    if(DEV) return 0;
+    if(FAST_MODE) return 0;
     var len=content.length;
     var secs=Math.max(5,Math.min(12,Math.round(len/10)));
     return secs*1000;
@@ -1322,7 +1382,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     },100);
 
     var ansLen=QUIZ_A.length;
-    var delay=DEV?0:Math.max(8,Math.min(15,Math.round(ansLen/8)))*1000;
+    var delay=FAST_MODE?0:Math.max(8,Math.min(15,Math.round(ansLen/8)))*1000;
     setTimeout(function(){
       hint.style.display='none';
       if(NQ.length>0){
@@ -1350,6 +1410,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     nqWrong=[];
     nqRound=1;
     nqActiveSet=NQ.map(function(_,i){return i});
+    clearNewsQuizResult();
     document.getElementById('nq-test').style.display='';
     document.getElementById('nq-score').style.display='none';
     document.getElementById('nq-review').style.display='none';
@@ -1432,7 +1493,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     setTimeout(function(){
       nextBtn.classList.add('show');
       nextBtn.scrollIntoView({behavior:'smooth',block:'center'});
-    },DEV?0:1200);
+    },FAST_MODE?0:1200);
   }
 
   function findLetterIdx(answerIdx){
@@ -1465,6 +1526,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
       if(nqAnswers[i].correct) correctCount++;
       else nqWrong.push(nqAnswers[i].realIdx);
     }
+    saveNewsQuizResult(NQ.length-nqWrong.length,NQ.length);
 
     var allCorrect=nqWrong.length===0;
     var emoji=allCorrect?'🎉':'📊';
@@ -1564,7 +1626,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     var q=NQ[qi];
     var news=findRelatedNews(q);
     var textLen=(q.question+' '+(news||'')+' '+q.options[q.answer]).length;
-    var delay=DEV?0:Math.max(6,Math.min(14,Math.round(textLen/12)))*1000;
+    var delay=FAST_MODE?0:Math.max(6,Math.min(14,Math.round(textLen/12)))*1000;
     setTimeout(function(){
       var ack=document.getElementById('nq-rev-ack-'+idx);
       if(ack) ack.innerHTML='<button class="nq-rev-btn" onclick="revAck('+idx+')">记住了 ✓</button>';
@@ -1723,7 +1785,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
       f.src=v.embed;f.allow='autoplay;fullscreen;encrypted-media';
       f.allowFullscreen=true;f.style.cssText='width:100%;height:100%;border:none';
       container.appendChild(f);
-      bT=setTimeout(showInter,DEV?0:(v.dur*60+15)*1000);
+      bT=setTimeout(showInter,FAST_MODE?0:(v.dur*60+15)*1000);
     }
 
     var el=document.getElementById('pli-'+idx);
@@ -1861,7 +1923,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
       clearInterval(cT);
       if(totalRest<=0){
         document.getElementById('inter-timer').textContent='0:00';
-        document.getElementById('inter-timer-lbl').textContent='⭐ '+doneCount+'/'+V.length+' · DEV · 无休息';
+        document.getElementById('inter-timer-lbl').textContent='⭐ '+doneCount+'/'+V.length+' · '+FAST_LABEL+' · 无休息';
         document.getElementById('inter-bar-fill').style.width='100%';
         btn.disabled=false;
         btn.textContent='▶ 看下一个视频';
@@ -2113,6 +2175,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     return SITE_URL||window.location.href;
   }
 
+  function getShareUrlParent(){
+    if(!SITE_URL) return window.location.href;
+    var baseUrl=SITE_URL.replace(/\/+$/,'');
+    if(baseUrl.endsWith('/daily')) return baseUrl+'?d='+PAGE_DATE;
+    return baseUrl+'/daily?d='+PAGE_DATE;
+  }
+
+  function getShareUrlFriend(){
+    if(!SITE_URL) return window.location.href;
+    var baseUrl=SITE_URL.replace(/\/+$/,'');
+    if(baseUrl.endsWith('/daily')) return baseUrl;
+    return baseUrl+'/daily';
+  }
+
   function showShareModal(title,text){
     document.getElementById('share-modal-title').textContent=title;
     var ta=document.getElementById('share-modal-text');
@@ -2133,7 +2209,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 
   window.lcShareParent=function(){
     submitReactions();
-    var url=getShareUrl();
+    var url=getShareUrlParent();
     var nqScore='';
     try{var nd=localStorage.getItem('kidstv_nq_'+PAGE_DATE);if(nd){var d=JSON.parse(nd);nqScore=d.correct===d.total?' 测验全对！':' 测验 '+d.correct+'/'+d.total;}}catch(e){}
     var kpLine='';
@@ -2146,7 +2222,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   };
 
   window.lcShareFriend=function(){
-    var url=getShareUrl();
+    var url=getShareUrlFriend();
     var text='🎬 推荐一个超棒的儿童视频频道！\n\n每天精选5-6个优质科普视频（YouTube/B站），还有新闻播报和知识测验。\n\n✅ 免费 ✅ 没广告 ✅ 有护眼休息提醒\n\n👉 今天的片单：'+url+'\n\n可以按孩子年龄和兴趣定制专属频道哦～';
     showShareModal('👫 推荐给朋友',text);
   };
@@ -2173,6 +2249,101 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   // ===== IMAGE SHARE =====
   var lcImageData=null;
 
+  function ensureShareExportHost(){
+    var host=document.getElementById('lc-export-host');
+    if(host) return host;
+    host=document.createElement('div');
+    host.id='lc-export-host';
+    host.className='lc-export-host';
+    host.setAttribute('aria-hidden','true');
+    document.body.appendChild(host);
+    return host;
+  }
+
+  function clearShareExportHost(){
+    var host=document.getElementById('lc-export-host');
+    if(host) host.innerHTML='';
+  }
+
+  function buildShareExportStage(card){
+    var host=ensureShareExportHost();
+    host.innerHTML='';
+
+    var wrapper=document.createElement('div');
+    wrapper.style.cssText='background:#fff;padding:16px;border-radius:40px';
+    
+    var clone=card.cloneNode(true);
+    clone.removeAttribute('id');
+    wrapper.appendChild(clone);
+    host.appendChild(wrapper);
+
+    return wrapper;
+  }
+
+  function waitForImages(root){
+    var imgs=root.querySelectorAll('img');
+    if(!imgs.length) return Promise.resolve();
+    return new Promise(function(resolve){
+      var doneCount=0,resolved=false;
+      function done(){
+        doneCount++;
+        if(doneCount>=imgs.length&&!resolved){
+          resolved=true;
+          resolve();
+        }
+      }
+      for(var i=0;i<imgs.length;i++){
+        var img=imgs[i];
+        try{img.crossOrigin='anonymous'}catch(e){}
+        if(img.complete&&img.naturalWidth>0){
+          done();
+        }else{
+          img.addEventListener('load',done,{once:true});
+          img.addEventListener('error',done,{once:true});
+        }
+      }
+      setTimeout(function(){
+        if(!resolved){
+          resolved=true;
+          resolve();
+        }
+      },2000);
+    });
+  }
+
+  function applyRoundedCorners(srcCanvas, borderRadius, headerColor){
+    var w=srcCanvas.width, h=srcCanvas.height;
+    var out=document.createElement('canvas');
+    out.width=w; out.height=h;
+    var ctx=out.getContext('2d');
+    
+    if(headerColor){
+      ctx.fillStyle=headerColor;
+      ctx.fillRect(0,0,w,h);
+    }
+    
+    ctx.beginPath();
+    if(typeof ctx.roundRect==='function'){
+      ctx.roundRect(0,0,w,h,borderRadius);
+    }else{
+      var r=borderRadius;
+      ctx.moveTo(r,0);
+      ctx.lineTo(w-r,0);
+      ctx.quadraticCurveTo(w,0,w,r);
+      ctx.lineTo(w,h-r);
+      ctx.quadraticCurveTo(w,h,w-r,h);
+      ctx.lineTo(r,h);
+      ctx.quadraticCurveTo(0,h,0,h-r);
+      ctx.lineTo(0,r);
+      ctx.quadraticCurveTo(0,0,r,0);
+      ctx.closePath();
+    }
+    ctx.clip();
+    ctx.drawImage(srcCanvas,0,0);
+    
+    return out;
+  }
+
   window.lcSaveImage=function(){
     var wrap=document.getElementById('img-preview-wrap');
     wrap.innerHTML='<div class="img-preview-loading">⏳ 正在生成图片...</div>';
@@ -2183,32 +2354,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
       wrap.innerHTML='<div class="img-preview-loading">图片功能加载中，请稍后再试</div>';
       return;
     }
-    html2canvas(card,{
+
+    var wrapper=buildShareExportStage(card);
+    waitForImages(wrapper).then(function(){
+      return html2canvas(wrapper,{
       scale:3,
       useCORS:true,
-      backgroundColor:null,
+      backgroundColor:'#ffffff',
       logging:false
-    }).then(function(canvas){
-      var r=24*3;
-      var w=canvas.width,h=canvas.height;
-      var c2=document.createElement('canvas');
-      c2.width=w;c2.height=h;
-      var ctx=c2.getContext('2d');
-      ctx.beginPath();
-      ctx.moveTo(r,0);
-      ctx.lineTo(w-r,0);ctx.quadraticCurveTo(w,0,w,r);
-      ctx.lineTo(w,h-r);ctx.quadraticCurveTo(w,h,w-r,h);
-      ctx.lineTo(r,h);ctx.quadraticCurveTo(0,h,0,h-r);
-      ctx.lineTo(0,r);ctx.quadraticCurveTo(0,0,r,0);
-      ctx.closePath();ctx.clip();
-      ctx.drawImage(canvas,0,0);
-      lcImageData=c2.toDataURL('image/png');
+      });
+    }).then(function(srcCanvas){
+      var finalCanvas=applyRoundedCorners(srcCanvas,40*3,'#ffffff');
+      lcImageData=finalCanvas.toDataURL('image/png');
       var img=document.createElement('img');
       img.src=lcImageData;
       img.style.width='100%';
       wrap.innerHTML='';
       wrap.appendChild(img);
+      clearShareExportHost();
     }).catch(function(){
+      clearShareExportHost();
       wrap.innerHTML='<div class="img-preview-loading">生成失败，请截图保存卡片</div>';
     });
   };
@@ -2470,6 +2635,240 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
       ctaBtn.style.opacity='.5';
     }
   }catch(e){}
+
+  function clampVideoIndex(raw){
+    var n=parseInt(raw,10);
+    if(isNaN(n)||n<1) n=1;
+    if(n>V.length) n=V.length;
+    return n;
+  }
+
+  function getDebugStageLabel(stage){
+    if(stage==='quiz') return '读新闻';
+    if(stage==='newsquiz') return '答题';
+    if(stage==='play') return '看视频';
+    if(stage==='summary') return '总结卡';
+    if(stage==='share') return '分享';
+    return '首页';
+  }
+
+  function syncDebugUrl(stage,videoNo){
+    if(!DEBUG_MODE) return;
+    var url=new URL(window.location.href);
+    url.searchParams.set('debug',stage||'1');
+    if(videoNo){
+      url.searchParams.set('video',String(clampVideoIndex(videoNo)));
+    }else{
+      url.searchParams.delete('video');
+    }
+    history.replaceState(history.state,'',url.pathname+url.search+url.hash);
+  }
+
+  function setDebugPanelState(stage,videoNo){
+    var panel=document.getElementById('debug-panel');
+    if(!panel) return;
+    var stageEl=document.getElementById('debug-stage-name');
+    if(stageEl) stageEl.textContent=getDebugStageLabel(stage);
+    var btns=panel.querySelectorAll('.debug-btn[data-stage]');
+    for(var i=0;i<btns.length;i++){
+      btns[i].classList.toggle('active',btns[i].getAttribute('data-stage')===stage);
+    }
+    var input=document.getElementById('debug-video-input');
+    if(input&&videoNo) input.value=clampVideoIndex(videoNo);
+  }
+
+  function debugResetView(){
+    cleanup();
+    clearTimeout(bT);
+    clearInterval(cT);
+    clearInterval(popT);
+    clearInterval(biliCdT);
+    var confetti=document.querySelectorAll('.confetti-wrap');
+    for(var i=0;i<confetti.length;i++) confetti[i].remove();
+    document.getElementById('share-modal').classList.remove('show');
+    document.getElementById('img-preview').classList.remove('show');
+    document.getElementById('learn-card').classList.remove('show');
+    document.getElementById('lc-sticky-bar').style.display='none';
+    document.getElementById('quiz-done').classList.remove('show');
+    document.getElementById('quiz').classList.remove('show');
+    document.getElementById('play').classList.remove('on');
+    document.getElementById('inter').classList.remove('show');
+    document.getElementById('browse').style.display='';
+    document.getElementById('nq').classList.remove('show');
+    document.getElementById('nq-test').style.display='';
+    document.getElementById('nq-score').style.display='none';
+    document.getElementById('nq-review').style.display='none';
+    document.body.style.overflow='';
+    ci=-1;
+    quizDone=false;
+    showSticky();
+  }
+
+  function debugSetWatched(videoNo,allDone){
+    watched={};
+    if(allDone){
+      for(var i=0;i<V.length;i++) watched[i]=true;
+    }else{
+      var upto=Math.max(0,clampVideoIndex(videoNo)-1);
+      for(var j=0;j<upto;j++) watched[j]=true;
+    }
+    save();
+    updList();
+  }
+
+  function debugUnlockQuizFlow(){
+    readCount=HL_SECTIONS.length;
+    totalSections=HL_SECTIONS.length;
+    for(var i=0;i<HL_SECTIONS.length;i++){
+      var sec=document.getElementById('qsec-'+i);
+      if(sec){
+        sec.classList.remove('locked');
+        sec.classList.add('done');
+      }
+      var ack=document.getElementById('qack-'+i);
+      if(ack) ack.innerHTML='<span class="quiz-sec-btn" style="pointer-events:none">✅ 已读</span>';
+    }
+    updProgress();
+    var challenge=document.getElementById('quiz-challenge');
+    var lock=document.getElementById('quiz-lock');
+    var goBtn=document.getElementById('quiz-go');
+    if(lock) lock.style.display='none';
+    if(QUIZ_Q){
+      if(challenge){
+        challenge.style.display='';
+        challenge.classList.remove('locked');
+      }
+      document.getElementById('quiz-btns').style.display='none';
+      document.getElementById('quiz-ans').classList.add('show');
+      document.getElementById('quiz-ans-body').textContent=QUIZ_A;
+      document.getElementById('quiz-reading-hint').style.display='none';
+      if(NQ.length>0){
+        goBtn.textContent='📝 开始新闻小测验';
+        goBtn.onclick=function(){showNewsQuiz()};
+      }else{
+        goBtn.textContent='▶ 开始看视频！';
+        goBtn.onclick=function(){quizStart()};
+      }
+      goBtn.classList.add('show');
+    }else if(challenge){
+      challenge.style.display='none';
+    }
+  }
+
+  function debugGoHome(){
+    debugResetView();
+    clearNewsQuizResult();
+    debugSetWatched(1,false);
+    window.scrollTo(0,0);
+  }
+
+  function debugGoQuiz(){
+    debugResetView();
+    clearNewsQuizResult();
+    debugSetWatched(1,false);
+    showQuiz();
+  }
+
+  function debugGoNewsQuiz(){
+    debugGoQuiz();
+    debugUnlockQuizFlow();
+    if(NQ.length>0) showNewsQuiz();
+  }
+
+  function debugGoPlay(videoNo){
+    debugResetView();
+    debugSetWatched(videoNo,false);
+    quizDone=true;
+    enterPlayMode(clampVideoIndex(videoNo)-1);
+  }
+
+  function debugGoSummary(openShare){
+    debugResetView();
+    debugSetWatched(V.length,true);
+    if(NQ.length>0) saveNewsQuizResult(NQ.length,NQ.length);
+    else clearNewsQuizResult();
+    ci=V.length-1;
+    quizDone=true;
+    document.getElementById('browse').style.display='none';
+    document.getElementById('play').classList.add('on');
+    document.body.style.overflow='hidden';
+    hideSticky();
+    showLearnCard();
+    if(openShare) lcShareParent();
+  }
+
+  function applyDebugStage(stage,opts){
+    if(!DEBUG_MODE) return;
+    var videoNo=clampVideoIndex(opts&&opts.videoNo?opts.videoNo:DEBUG_VIDEO);
+    var target=normalizeDebugStage(stage)||'home';
+    DEBUG_STAGE=target;
+    DEBUG_VIDEO=videoNo;
+    if(target==='quiz') debugGoQuiz();
+    else if(target==='newsquiz') debugGoNewsQuiz();
+    else if(target==='play') debugGoPlay(videoNo);
+    else if(target==='summary') debugGoSummary(false);
+    else if(target==='share') debugGoSummary(true);
+    else debugGoHome();
+    setDebugPanelState(target,videoNo);
+    syncDebugUrl(target,target==='play'?videoNo:0);
+  }
+
+  window.debugToggle=function(){
+    var panel=document.getElementById('debug-panel');
+    if(panel) panel.classList.toggle('open');
+  };
+
+  window.debugAdjustVideo=function(delta){
+    var input=document.getElementById('debug-video-input');
+    if(!input) return;
+    input.value=clampVideoIndex((parseInt(input.value,10)||1)+delta);
+  };
+
+  window.debugJump=function(stage){
+    var input=document.getElementById('debug-video-input');
+    var videoNo=input?clampVideoIndex(input.value):1;
+    applyDebugStage(stage,{videoNo:videoNo});
+  };
+
+  function mountDebugTools(){
+    if(!DEBUG_MODE||document.getElementById('debug-panel')) return;
+    var shell=document.createElement('div');
+    shell.id='debug-panel';
+    shell.className='debug-panel open';
+    shell.innerHTML=
+      '<button class="debug-toggle" type="button" onclick="debugToggle()">🐞 DEBUG</button>'+
+      '<div class="debug-card">'+
+        '<div class="debug-top">'+
+          '<div class="debug-title">开发跳转</div>'+
+          '<div class="debug-stage">当前：<span id="debug-stage-name">首页</span></div>'+
+        '</div>'+
+        '<div class="debug-grid">'+
+          '<button class="debug-btn" type="button" data-stage="home" onclick="debugJump(&quot;home&quot;)">首页</button>'+
+          '<button class="debug-btn" type="button" data-stage="quiz" onclick="debugJump(&quot;quiz&quot;)">读新闻</button>'+
+          '<button class="debug-btn" type="button" data-stage="newsquiz" onclick="debugJump(&quot;newsquiz&quot;)">答题</button>'+
+          '<button class="debug-btn" type="button" data-stage="play" onclick="debugJump(&quot;play&quot;)">看视频</button>'+
+          '<button class="debug-btn" type="button" data-stage="summary" onclick="debugJump(&quot;summary&quot;)">总结卡</button>'+
+          '<button class="debug-btn" type="button" data-stage="share" onclick="debugJump(&quot;share&quot;)">分享</button>'+
+        '</div>'+
+        '<div class="debug-video">'+
+          '<span class="debug-video-label">视频</span>'+
+          '<button class="debug-video-step" type="button" onclick="debugAdjustVideo(-1)">−</button>'+
+          '<input class="debug-video-input" id="debug-video-input" type="number" min="1" max="'+V.length+'" value="'+clampVideoIndex(DEBUG_VIDEO)+'">'+
+          '<button class="debug-video-step" type="button" onclick="debugAdjustVideo(1)">+</button>'+
+          '<span class="debug-video-total">/ '+V.length+'</span>'+
+        '</div>'+
+        '<div class="debug-hint">支持直接打开：?debug=play&amp;video=3 或 ?debug=share</div>'+
+      '</div>';
+    document.body.appendChild(shell);
+    setDebugPanelState(DEBUG_STAGE||'home',clampVideoIndex(DEBUG_VIDEO));
+  }
+
+  mountDebugTools();
+  if(DEBUG_MODE&&DEBUG_STAGE){
+    setTimeout(function(){
+      applyDebugStage(DEBUG_STAGE,{videoNo:DEBUG_VIDEO});
+    },50);
+  }
 })();
 </script>
 </body>
