@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>大宝哥的专属频道</title>
+<title>iKids 往日片单</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f5f5f7;color:#1d1d1f;-webkit-font-smoothing:antialiased}
@@ -44,13 +44,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 <body>
 <div class="wrap">
   <div class="hdr">
-    <h1>🌟 大宝哥的专属频道</h1>
-    <div class="hdr-desc">放学后的视频时光，寓教于乐<br>周一到周日每天一个专题，搭配当日新闻动态<br>长期陪伴成长</div>
+    <h1>🌟 iKids 往日片单</h1>
+    <div class="hdr-desc">每天一份精选儿童视频片单，寓教于乐<br>搭配当日新闻动态与学习卡片<br>长期陪伴成长</div>
     <div class="hdr-tagline" id="tagline"></div>
   </div>
   <div class="content">
     <div class="wk-label">第12周 · 3月16日 - 3月22日</div>
-      <a class="card" href="p_9ab4c65397.html">
+      <a class="card" href="p_9ab4c65397.html?public=1">
         <div class="card-left">
           <div class="card-num">22</div>
           <div class="card-month">3月</div>
@@ -63,7 +63,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
         <div class="card-arrow">›</div>
       </a><div class="wk-label">第11周 · 3月9日 - 3月15日</div>
-      <a class="card" href="2026-03-15.html">
+      <a class="card" href="2026-03-15.html?public=1">
         <div class="card-left">
           <div class="card-num">15</div>
           <div class="card-month">3月</div>
@@ -76,7 +76,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
         <div class="card-arrow">›</div>
       </a>
-      <a class="card" href="p_7ca882560b.html">
+      <a class="card" href="p_7ca882560b.html?public=1">
         <div class="card-left">
           <div class="card-num">15</div>
           <div class="card-month">3月</div>
@@ -89,7 +89,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
         <div class="card-arrow">›</div>
       </a>
-      <a class="card" href="p_25b055568c.html">
+      <a class="card" href="p_25b055568c.html?public=1">
         <div class="card-left">
           <div class="card-num">14</div>
           <div class="card-month">3月</div>
@@ -103,13 +103,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         <div class="card-arrow">›</div>
       </a>
   </div>
-  <div class="stats">📋 已为大宝哥精选 <span class="stats-num">46</span> 部视频 · 累计 <span class="stats-num">233</span> 分钟优质内容</div>
+  <div class="stats">📋 已累计精选 <span class="stats-num">46</span> 部视频 · 累计 <span class="stats-num">233</span> 分钟优质内容</div>
 </div>
 <script>
 (function(){
   var T=["不刷抖音，也能让孩子看得停不下来","比起放任乱刷视频，孩子值得更好的内容","每一条都是精心挑选，拒绝垃圾流量","用好内容喂养好奇心，而不是乱刷视频消磨时间"];
   var el=document.getElementById('tagline');
   if(el) el.textContent='「'+T[Math.floor(Math.random()*T.length)]+'」';
+  
+  try{
+    var visitor=localStorage.getItem('ikids_visitor');
+    if(visitor){
+      var v=JSON.parse(visitor);
+      if(v.nickname){
+        var hdrTitle=document.querySelector('.hdr h1');
+        if(hdrTitle) hdrTitle.textContent='🌟 '+v.nickname+' 的往日片单';
+        var hdrDesc=document.querySelector('.hdr-desc');
+        if(hdrDesc&&v.visitDates){
+          var days=v.visitDates.length;
+          hdrDesc.innerHTML='已经陪 '+v.nickname+' 看了 '+days+' 天啦<br>每天一份精选儿童视频片单，寓教于乐<br>长期陪伴成长';
+        }
+      }
+    }
+  }catch(e){}
 })();
 </script>
 </body>

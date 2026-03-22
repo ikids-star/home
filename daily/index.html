@@ -21,6 +21,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sa
 <script>
 (async function() {
   const params = new URLSearchParams(window.location.search);
+  const isPublic = params.get('public') === '1' || !params.get('d');
+
+  function buildTarget(file) {
+    if (!file) return '../index.html';
+    return '../' + file + (isPublic ? '?public=1' : '');
+  }
   
   // 场景 1: ?list → 显示历史列表
   if (params.has('list')) {
@@ -37,7 +43,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sa
       
       // 直接查找完整日期
       if (dateMap[targetDate]) {
-        window.location.href = '../' + dateMap[targetDate];
+        window.location.href = buildTarget(dateMap[targetDate]);
         return;
       }
       
@@ -60,7 +66,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sa
       .reverse();
     
     if (dates.length > 0) {
-      window.location.href = '../' + dateMap[dates[0]];
+      window.location.href = buildTarget(dateMap[dates[0]]);
       return;
     }
   } catch (e) {

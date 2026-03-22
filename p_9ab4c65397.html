@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>大宝哥的频道 · 2026-03-22</title>
-<script type="application/json" id="page-meta">{"date":"2026-03-22","day":"sunday","theme":"🌏 世界历史 & 创意 World History & Creative","child_name":"大宝哥","total_duration":55,"video_count":12,"series_names":["如果历史是一群喵","儿童绘画教室","宇宙儿童瑜伽冒险","可汗学院数学","Scratch 编程入门"]}</script>
+<title>iKids 学习日报 · 2026-03-22</title>
+<script type="application/json" id="page-meta">{"date":"2026-03-22","day":"sunday","theme":"🌏 世界历史 & 创意 World History & Creative","child_name":"大宝哥","public_child_name":"","total_duration":55,"video_count":12,"series_names":["如果历史是一群喵","儿童绘画教室","宇宙儿童瑜伽冒险","可汗学院数学","Scratch 编程入门"]}</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--c:#00695C;--bg:#E0F2F1;--grad:linear-gradient(135deg, #004D40 0%, #26A69A 100%)}
@@ -385,9 +385,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 .lc-card-hdr{background:var(--grad);color:#fff;padding:24px 20px 20px;text-align:center;position:relative}
 .lc-card-brand{font-size:14px;opacity:.8;margin-bottom:6px;letter-spacing:1px}
 .lc-card-brand strong{font-size:16px;font-weight:700;letter-spacing:2px}
-.lc-card-brand-date{font-size:13px;opacity:.8;margin-bottom:4px;letter-spacing:.5px}
-.lc-card-h{font-size:20px;font-weight:800;margin-bottom:6px}
+.lc-card-brand-date{font-size:13px;opacity:.8;margin-bottom:8px;letter-spacing:.5px}
+.lc-card-h{font-size:22px;font-weight:800;margin-bottom:8px;line-height:1.35}
 .lc-card-streak{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.2);padding:4px 14px;border-radius:14px;font-size:12px;font-weight:600}
+.lc-name-gate{display:none;margin:0 16px 16px;background:#fff;border-radius:18px;padding:16px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.lc-name-gate.show{display:block}
+.lc-name-gate-title{font-size:15px;font-weight:700;color:#1d1d1f;margin-bottom:6px}
+.lc-name-gate-sub{font-size:13px;line-height:1.6;color:#666;margin-bottom:12px}
+.lc-name-gate-row{display:flex;gap:10px}
+.lc-name-gate-input{flex:1;min-width:0;padding:12px 14px;border:1.5px solid #d8dbe6;border-radius:12px;font-size:15px;color:#1d1d1f;background:#fff}
+.lc-name-gate-input:focus{outline:none;border-color:var(--c);box-shadow:0 0 0 3px rgba(21,101,192,.12)}
+.lc-name-gate-btn{padding:12px 16px;border:none;border-radius:12px;background:var(--grad);color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:transform .1s;white-space:nowrap}
+.lc-name-gate-btn:active{transform:scale(.96)}
 .lc-card-body{padding:20px}
 .lc-card-divider{height:1px;background:#f0f0f0;margin:14px 0}
 .lc-card-sec-title{font-size:11px;font-weight:600;color:#bbb;letter-spacing:2px;margin-bottom:10px;text-align:center}
@@ -403,11 +412,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 .lc-card-discuss{background:var(--bg);border-radius:12px;padding:14px;margin-top:2px}
 .lc-card-discuss-label{font-size:11px;color:#888;font-weight:600;margin-bottom:4px}
 .lc-card-discuss-text{font-size:14px;font-weight:600;color:var(--c);line-height:1.5;font-style:italic}
-.lc-card-footer{display:flex;align-items:center;gap:14px;padding:16px 20px;background:#fafafa;border-top:1px solid #f0f0f0}
-.lc-card-qr{width:72px;height:72px;flex-shrink:0;border-radius:8px;overflow:hidden;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center}
+.lc-card-footer{display:flex;align-items:center;gap:14px;padding:18px 18px;background:#fbfbfb;border-top:1px solid #eef1f4}
+.lc-card-qr{width:76px;height:76px;flex-shrink:0;border-radius:10px;overflow:hidden;background:#fff;border:1px solid #e7eaee;display:flex;align-items:center;justify-content:center}
 .lc-card-qr img{width:100%;height:100%}
-.lc-card-cta{flex:1;font-size:12px;color:#888;line-height:1.6}
-.lc-card-cta strong{display:block;font-size:13px;color:#333;margin-bottom:2px}
+.lc-card-cta{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;min-height:76px}
+.lc-card-cta-title{font-size:13.5px;line-height:1.3;color:#2d2f33;font-weight:800;margin-bottom:7px;letter-spacing:-.3px;white-space:nowrap}
+.lc-card-cta-line{font-size:11.5px;line-height:1.5;color:#9aa0a6;font-weight:600}
 
 .lc-share-hint{text-align:center;margin:16px;font-size:14px;color:#888;line-height:1.6}
 .lc-share-btns{display:flex;flex-direction:column;gap:10px;margin:0 16px}
@@ -539,8 +549,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 <div id="browse" class="wrap">
   <div class="hdr">
     <div class="hdr-hi">3月22日 · 周日</div>
-    <h1><span class="hdr-float">👋</span> 嗨，大宝哥！</h1>
-    <p class="hdr-sub">你的专属放映厅开场啦</p>
+    <h1><span class="hdr-float">👋</span> <span id="hdr-title-text">欢迎来到 iKids</span></h1>
+    <p class="hdr-sub" id="hdr-sub">今天的精选内容已经准备好了</p>
     <div class="hdr-badge">🎬 今日主题 · 🌏 世界历史 &amp; 创意 World History &amp; Creative</div>
     <div class="hdr-stats">🎬 12个精彩视频 · ⏱ 55分钟</div>
   </div>
@@ -553,7 +563,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 
   
     <section class="headlines">
-      <div class="sec-title">🌟 大宝哥的今日头条</div>
+      <div class="sec-title" id="headlines-title">🌟 今日头条</div>
       
       <div class="hl-row">
         <span class="hl-icon">📅</span>
@@ -578,7 +588,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
       </div>
       
       <div class="hl-curiosity" onclick="this.classList.toggle('open')">
-        <div class="hl-q-label">❓ 大宝哥可能会问</div>
+        <div class="hl-q-label" id="hl-q-label">❓ 你可能会问</div>
         <div class="hl-q">"地球上的水为什么永远用不完？"</div>
         <div class="hl-a">
             <div class="hl-a-hint">👆 点击看看答案</div>
@@ -591,8 +601,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     <div class="sec-title">📺 今日片单</div>
     <div class="slot-label">📺 主系列 · 如果历史是一群喵</div>
       <div class="vcard" onclick="enterPlayMode(0)">
-        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
-          
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -602,8 +612,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(1)">
-        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
-          
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -613,8 +623,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(2)">
-        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
-          
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -624,8 +634,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(3)">
-        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
-          
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -635,8 +645,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(4)">
-        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
-          
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -646,8 +656,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(5)">
-        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
-          
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -657,8 +667,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(6)">
-        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
-          
+        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
+          <span class="thumb-icon">B</span>
           <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
@@ -893,7 +903,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   <div class="quiz-scroll">
     <div class="quiz-hdr">
       <div class="quiz-hdr-icon">📰</div>
-      <div class="quiz-hdr-title">大宝哥，这是你的今日头条</div>
+      <div class="quiz-hdr-title" id="quiz-hdr-title">先看看今天的今日头条</div>
       <div class="quiz-hdr-sub">先看看今天发生了什么，再开始视频吧！</div>
       <div class="quiz-hdr-progress" id="quiz-progress"></div>
     </div>
@@ -1102,6 +1112,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
       <button class="lc-emoji-btn" data-type="more" onclick="lcReact(this)">🙋<span>还想看</span></button>
     </div>
 
+    <div class="lc-name-gate" id="lc-name-gate">
+      <div class="lc-name-gate-title">分享图想带上孩子昵称？</div>
+      <div class="lc-name-gate-sub">填个小名后再生成图片，就会显示“乐乐的 iKids 学习日报”。观看天数会继续沿用真实记录。</div>
+      <div class="lc-name-gate-row">
+        <input class="lc-name-gate-input" id="lc-name-gate-input" type="text" maxlength="12" placeholder="输入孩子昵称/小名">
+        <button class="lc-name-gate-btn" type="button" onclick="saveLearnCardName()">保存昵称</button>
+      </div>
+    </div>
+
     <!-- Auto-generated card -->
     <div class="lc-card-wrap">
       <div class="lc-card" id="lc-card"></div>
@@ -1150,7 +1169,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   var DEBUG_STAGE=normalizeDebugStage(QS.get('stage')||DEBUG_PARAM||'');
   var DEBUG_VIDEO=parseDebugVideo(QS.get('video'));
   if(DEV&&!DEBUG_MODE) showModeBadge('DEV');
-  var V=[{"title":"大器晚成","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260613&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260613","platform":"Bilibili","lang":"中文","dur":4,"ep":"第15集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"一鸣惊人","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260614&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260614","platform":"Bilibili","lang":"中文","dur":4,"ep":"第16集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"威震东南","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260615&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260615","platform":"Bilibili","lang":"中文","dur":4,"ep":"第17集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"吴越相争","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261513&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261513","platform":"Bilibili","lang":"中文","dur":4,"ep":"第18集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"三家分晋","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261515&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261515","platform":"Bilibili","lang":"中文","dur":4,"ep":"第19集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"商鞅变法","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261516&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261516","platform":"Bilibili","lang":"中文","dur":4,"ep":"第20集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"六国合纵","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=262923&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep262923","platform":"Bilibili","lang":"中文","dur":4,"ep":"第21集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"How To Draw A Spinosaurus Dinosaur","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/xgWR6r3_lRo?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=xgWR6r3_lRo","platform":"YouTube","lang":"English","dur":8,"ep":"第1集/共2集","ytId":"xgWR6r3_lRo","bangumi":false,"biliCover":""},{"title":"How To Draw A TacoSaurus","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/clDh6CsrMK8?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=clDh6CsrMK8","platform":"YouTube","lang":"English","dur":7,"ep":"第2集/共2集","ytId":"clDh6CsrMK8","bangumi":false,"biliCover":""},{"title":"We're Going on a Bear Hunt","series":"宇宙儿童瑜伽冒险","embed":"https://www.youtube.com/embed/KAT5NiWHFIU?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=KAT5NiWHFIU","platform":"YouTube","lang":"English","dur":15,"ep":"选看","ytId":"KAT5NiWHFIU","bangumi":false,"biliCover":""},{"title":"Fraction Basics","series":"可汗学院数学","embed":"https://www.youtube.com/embed/jgWqSjgMAtw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=jgWqSjgMAtw","platform":"YouTube","lang":"English","dur":4,"ep":"选看","ytId":"jgWqSjgMAtw","bangumi":false,"biliCover":""},{"title":"Scratch Plants Vs Zombies - Beginner Tutorial","series":"Scratch 编程入门","embed":"https://www.youtube.com/embed/IyYx_ZM5lyw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=IyYx_ZM5lyw","platform":"YouTube","lang":"English","dur":16,"ep":"选看","ytId":"IyYx_ZM5lyw","bangumi":false,"biliCover":""}];
+  var V=[{"title":"大器晚成","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260613&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260613","platform":"Bilibili","lang":"中文","dur":4,"ep":"第15集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"一鸣惊人","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260614&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260614","platform":"Bilibili","lang":"中文","dur":4,"ep":"第16集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"威震东南","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260615&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260615","platform":"Bilibili","lang":"中文","dur":4,"ep":"第17集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"吴越相争","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261513&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261513","platform":"Bilibili","lang":"中文","dur":4,"ep":"第18集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"三家分晋","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261515&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261515","platform":"Bilibili","lang":"中文","dur":4,"ep":"第19集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"商鞅变法","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261516&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261516","platform":"Bilibili","lang":"中文","dur":4,"ep":"第20集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"六国合纵","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=262923&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep262923","platform":"Bilibili","lang":"中文","dur":4,"ep":"第21集/共38集","ytId":"","bangumi":true,"biliCover":""},{"title":"How To Draw A Spinosaurus Dinosaur","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/xgWR6r3_lRo?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=xgWR6r3_lRo","platform":"YouTube","lang":"English","dur":8,"ep":"第1集/共2集","ytId":"xgWR6r3_lRo","bangumi":false,"biliCover":""},{"title":"How To Draw A TacoSaurus","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/clDh6CsrMK8?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=clDh6CsrMK8","platform":"YouTube","lang":"English","dur":7,"ep":"第2集/共2集","ytId":"clDh6CsrMK8","bangumi":false,"biliCover":""},{"title":"We're Going on a Bear Hunt","series":"宇宙儿童瑜伽冒险","embed":"https://www.youtube.com/embed/KAT5NiWHFIU?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=KAT5NiWHFIU","platform":"YouTube","lang":"English","dur":15,"ep":"选看","ytId":"KAT5NiWHFIU","bangumi":false,"biliCover":""},{"title":"Fraction Basics","series":"可汗学院数学","embed":"https://www.youtube.com/embed/jgWqSjgMAtw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=jgWqSjgMAtw","platform":"YouTube","lang":"English","dur":4,"ep":"选看","ytId":"jgWqSjgMAtw","bangumi":false,"biliCover":""},{"title":"Scratch Plants Vs Zombies - Beginner Tutorial","series":"Scratch 编程入门","embed":"https://www.youtube.com/embed/IyYx_ZM5lyw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=IyYx_ZM5lyw","platform":"YouTube","lang":"English","dur":16,"ep":"选看","ytId":"IyYx_ZM5lyw","bangumi":false,"biliCover":""}];
   var ci=-1,watched={},SK='kidstv_2026-03-22',quizDone=false;
   var ytP=null,bT=null,cT=null,biliPop=null,popT=null,biliWatchStart=null,biliCdT=null;
   var isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -1167,7 +1186,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   var THEME_TEXT="🌏 世界历史 & 创意 World History & Creative";
   var DATE_SHORT='3月22日';
   var WEEKDAY_ZH='周日';
-  var CHILD_NAME="大宝哥";
+  var PRIVATE_CHILD_NAME="大宝哥";
+  var PUBLIC_CHILD_NAME="";
   var TOTAL_DUR=55;
   var VIDEO_COUNT=12;
   var GF_URL="https://docs.google.com/forms/d/e/1FAIpQLSeKO26DrL-XRbAx3Zkhpysj3FfWGGEgVi2Xap6nFFh6xpg4zw/formResponse";
@@ -1176,6 +1196,159 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   var CF_FIELDS={"name":"entry.1543178764","role":"entry.930812808","age":"entry.1459956221","text":"entry.931998799","page_date":"entry.911812004","timestamp":"entry.1976194980"};
   var CF_SHEET="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOCNGSTR8ygj5-zgQTWspAefGHDbqje6XPH8qhnPXToKW3PBPVoRSad1MAYD2rLyyvC4vU_pAJwFoc/pub?output=csv";
   function escH(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function hasPublicShareFlag(){
+    return QS.get('public')==='1'||QS.get('view')==='public'||QS.get('share')==='friend';
+  }
+  var IS_PUBLIC_VIEW=hasPublicShareFlag();
+  function getViewerName(){
+    return IS_PUBLIC_VIEW?PUBLIC_CHILD_NAME:PRIVATE_CHILD_NAME;
+  }
+  function getHeaderTitleText(){
+    var name=getViewerName();
+    if(IS_PUBLIC_VIEW&&!name) return '欢迎来到 iKids';
+    return '嗨，'+name+'！';
+  }
+  function getHeaderSubtitleText(){
+    return IS_PUBLIC_VIEW?'今天的精选内容已经准备好了':'你的专属放映厅开场啦';
+  }
+  function getHeadlinesTitleText(){
+    var name=getViewerName();
+    if(IS_PUBLIC_VIEW&&!name) return '🌟 今日头条';
+    return '🌟 '+name+'的今日头条';
+  }
+  function getCuriosityLabelText(){
+    var name=getViewerName();
+    if(IS_PUBLIC_VIEW&&!name) return '❓ 你可能会问';
+    return '❓ '+name+'可能会问';
+  }
+  function getQuizHeaderTitleText(){
+    var name=getViewerName();
+    if(IS_PUBLIC_VIEW&&!name) return '先看看今天的今日头条';
+    return name+'，这是你的今日头条';
+  }
+  function getDocumentTitleText(){
+    var name=getViewerName();
+    if(IS_PUBLIC_VIEW&&!name) return 'iKids 学习日报 · '+PAGE_DATE;
+    return name+'的频道 · '+PAGE_DATE;
+  }
+  function getLearnCardHeadingText(){
+    var name=getViewerName();
+    if(IS_PUBLIC_VIEW&&!name) return '今日学习日报';
+    return name;
+  }
+  var LEARN_CARD_NAME_KEY='kidstv_share_child_name';
+  var learnCardState=null;
+  function sanitizeLearnCardName(value){
+    if(typeof value!=='string') return '';
+    return value.replace(/\s+/g,' ').trim().slice(0,12);
+  }
+  function readLearnCardName(){
+    try{return sanitizeLearnCardName(localStorage.getItem(LEARN_CARD_NAME_KEY)||'')}catch(e){return ''}
+  }
+  function writeLearnCardName(value){
+    var name=sanitizeLearnCardName(value);
+    if(!name) return;
+    try{localStorage.setItem(LEARN_CARD_NAME_KEY,name)}catch(e){}
+  }
+  function getResolvedLearnCardName(){
+    var viewerName=getViewerName();
+    if(viewerName) return viewerName;
+    return readLearnCardName();
+  }
+  function getLearnCardTitleText(){
+    var name=getResolvedLearnCardName();
+    return name ? '📺 '+name+'的 iKids 学习日报' : '📺 这位小朋友的 iKids 学习日报';
+  }
+  function getLearnCardSummaryText(){
+    var name=getResolvedLearnCardName();
+    if(name) return name+'，今天一共看了 '+VIDEO_COUNT+' 个视频，共 '+TOTAL_DUR+' 分钟！';
+    return '今天一共看了 '+VIDEO_COUNT+' 个视频，共 '+TOTAL_DUR+' 分钟！';
+  }
+  function syncLearnCardNameGate(){
+    var gate=document.getElementById('lc-name-gate');
+    var input=document.getElementById('lc-name-gate-input');
+    if(!gate||!input) return;
+    var storedName=readLearnCardName();
+    if(document.activeElement!==input) input.value=storedName;
+    gate.classList.toggle('show',!getViewerName());
+    if(!input.dataset.bound){
+      input.dataset.bound='1';
+      input.addEventListener('keydown',function(e){
+        if(e.key==='Enter'){
+          e.preventDefault();
+          window.saveLearnCardName();
+        }
+      });
+    }
+  }
+  function ensureLearnCardNameReady(){
+    if(getResolvedLearnCardName()) return true;
+    syncLearnCardNameGate();
+    var input=document.getElementById('lc-name-gate-input');
+    if(input){
+      input.focus();
+      try{input.scrollIntoView({block:'center',behavior:'smooth'})}catch(e){}
+    }
+    lcToast('先填个孩子昵称，再生成分享图片');
+    return false;
+  }
+  function renderLearnCard(){
+    if(!learnCardState) return;
+    var streak=learnCardState.streak;
+    var title=learnCardState.title;
+    var themeZh=learnCardState.themeZh;
+    var hlHtml=learnCardState.hlHtml;
+    var kpHtml=learnCardState.kpHtml;
+    var discussHtml=learnCardState.discussHtml;
+    var qrUrl=SITE_URL||window.location.href;
+    var qrSrc='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+encodeURIComponent(qrUrl);
+    var stars='';
+    for(var i=0;i<Math.min(streak,5);i++) stars+='★';
+
+    document.getElementById('lc-celeb-emoji').textContent=title.emoji;
+    document.getElementById('lc-celeb-title').textContent='全部看完啦！';
+    document.getElementById('lc-celeb-sub').textContent=getLearnCardSummaryText();
+    document.getElementById('lc-title-badge').textContent='坚持看有营养的视频 · 第 '+streak+' 天'+(stars?' '+stars:'');
+
+    var cardEl=document.getElementById('lc-card');
+    cardEl.innerHTML=
+      '<div class="lc-card-hdr" style="background:var(--grad)">'+
+        '<div class="lc-card-h">'+escH(getLearnCardTitleText())+'</div>'+
+        '<div class="lc-card-brand-date">'+DATE_SHORT+' '+WEEKDAY_ZH+' · '+escH(themeZh)+'</div>'+
+        '<div class="lc-card-streak">坚持看有营养的视频 · 第 '+streak+' 天'+(stars?' '+stars:'')+'</div>'+
+      '</div>'+
+      '<div class="lc-card-body">'+
+        hlHtml+
+        (kpHtml?'<div class="lc-card-sec-title">┄ 💡 今天我知道了 ┄</div>'+kpHtml:'')+
+        discussHtml+
+      '</div>'+
+      '<div class="lc-card-footer">'+
+        '<div class="lc-card-qr"><img src="'+qrSrc+'" alt="QR"></div>'+
+        '<div class="lc-card-cta">'+
+          '<div class="lc-card-cta-title">孩子的屏幕时间，也可以很有营养</div>'+
+          '<div class="lc-card-cta-line">知识·兴趣·开心都有，每日精心推荐</div>'+
+          '<div class="lc-card-cta-line">长按识别二维码，免费订阅</div>'+
+        '</div>'+
+      '</div>';
+
+    document.getElementById('lc-streak-msg').textContent='🔥 坚持看有营养的视频 · 第 '+streak+' 天'+(stars?' '+stars:'');
+    document.getElementById('lc-unlock-msg').textContent=nextTitleMsg(streak);
+    syncLearnCardNameGate();
+  }
+  function applyViewerCopy(){
+    document.title=getDocumentTitleText();
+    var hdrTitle=document.getElementById('hdr-title-text');
+    if(hdrTitle) hdrTitle.textContent=getHeaderTitleText();
+    var hdrSub=document.getElementById('hdr-sub');
+    if(hdrSub) hdrSub.textContent=getHeaderSubtitleText();
+    var headlinesTitle=document.getElementById('headlines-title');
+    if(headlinesTitle) headlinesTitle.textContent=getHeadlinesTitleText();
+    var qLabel=document.getElementById('hl-q-label');
+    if(qLabel) qLabel.textContent=getCuriosityLabelText();
+    var quizTitle=document.getElementById('quiz-hdr-title');
+    if(quizTitle) quizTitle.textContent=getQuizHeaderTitleText();
+  }
+  applyViewerCopy();
   function showModeBadge(label){
     var b=document.createElement('div');
     b.textContent=label;
@@ -2040,22 +2213,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 
     spawnConfetti();
 
-    document.getElementById('lc-celeb-emoji').textContent=title.emoji;
-    document.getElementById('lc-celeb-title').textContent='全部看完啦！';
-    document.getElementById('lc-celeb-sub').textContent=CHILD_NAME+'，你今天看了 '+VIDEO_COUNT+' 个视频，共 '+TOTAL_DUR+' 分钟！';
-    document.getElementById('lc-title-badge').textContent=title.emoji+' '+title.name+' · 连续第 '+streak+' 天';
-
     var nqScore='',nqPerfect=false;
     try{
       var nqData=localStorage.getItem('kidstv_nq_'+PAGE_DATE);
       if(nqData){var nd=JSON.parse(nqData);nqScore=nd.correct+'/'+nd.total;nqPerfect=nd.correct===nd.total}
     }catch(e){}
-
-    var qrUrl=SITE_URL||window.location.href;
-    var qrSrc='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+encodeURIComponent(qrUrl);
-
-    var stars='';
-    for(var i=0;i<streak;i++) stars+='★';
 
     var themeZh=THEME_TEXT.replace(/\s+[A-Za-z][\w\s&]*/g,'').trim();
 
@@ -2083,30 +2245,33 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         '</div>';
     }
 
-    var cardEl=document.getElementById('lc-card');
-    cardEl.innerHTML=
-      '<div class="lc-card-hdr" style="background:var(--grad)">'+
-        '<div class="lc-card-brand">📺 <strong>iKids</strong> 学习日报</div>'+
-        '<div class="lc-card-brand-date">'+DATE_SHORT+' '+WEEKDAY_ZH+' · '+escH(themeZh)+'</div>'+
-        '<div class="lc-card-h">'+escH(CHILD_NAME)+'</div>'+
-        '<div class="lc-card-streak">坚持看有营养的视频 · 第 '+streak+' 天 '+stars+'</div>'+
-      '</div>'+
-      '<div class="lc-card-body">'+
-        hlHtml+
-        (kpHtml?'<div class="lc-card-sec-title">┄ 💡 今天我知道了 ┄</div>'+kpHtml:'')+
-        discussHtml+
-      '</div>'+
-      '<div class="lc-card-footer">'+
-        '<div class="lc-card-qr"><img src="'+qrSrc+'" alt="QR"></div>'+
-        '<div class="lc-card-cta"><strong>每天科普视频 + 新闻播报</strong>免费 · 无广告 · 护眼提醒<br>长按识别二维码，免费订阅</div>'+
-      '</div>';
-
-    document.getElementById('lc-streak-msg').textContent='🔥 坚持看有营养的视频 · 第 '+streak+' 天 '+stars;
-    document.getElementById('lc-unlock-msg').textContent=nextTitleMsg(streak);
+    learnCardState={
+      streak:streak,
+      title:title,
+      themeZh:themeZh,
+      hlHtml:hlHtml,
+      kpHtml:kpHtml,
+      discussHtml:discussHtml
+    };
+    renderLearnCard();
 
     document.getElementById('learn-card').classList.add('show');
     document.getElementById('lc-sticky-bar').style.display='';
     document.body.style.overflow='hidden';
+  };
+
+  window.saveLearnCardName=function(){
+    var input=document.getElementById('lc-name-gate-input');
+    if(!input) return;
+    var name=sanitizeLearnCardName(input.value);
+    if(!name){
+      lcToast('请输入孩子昵称');
+      input.focus();
+      return;
+    }
+    writeLearnCardName(name);
+    renderLearnCard();
+    lcToast('已保存昵称，分享图会显示孩子名字');
   };
 
   function getSelectedReactions(){
@@ -2121,7 +2286,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     if(!sel.length||!GF_URL) return;
     var body=new URLSearchParams();
     body.append(GF_FIELDS.date,PAGE_DATE);
-    body.append(GF_FIELDS.child,CHILD_NAME);
+    body.append(GF_FIELDS.child,PRIVATE_CHILD_NAME);
     body.append(GF_FIELDS.reactions,sel.join(','));
     body.append(GF_FIELDS.timestamp,new Date().toISOString());
     try{navigator.sendBeacon(GF_URL,body)}catch(e){}
@@ -2185,8 +2350,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   function getShareUrlFriend(){
     if(!SITE_URL) return window.location.href;
     var baseUrl=SITE_URL.replace(/\/+$/,'');
-    if(baseUrl.endsWith('/daily')) return baseUrl;
-    return baseUrl+'/daily';
+    if(baseUrl.endsWith('/daily')) return baseUrl+'?public=1';
+    return baseUrl+'/daily?public=1';
   }
 
   function showShareModal(title,text){
@@ -2210,14 +2375,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   window.lcShareParent=function(){
     submitReactions();
     var url=getShareUrlParent();
-    var nqScore='';
-    try{var nd=localStorage.getItem('kidstv_nq_'+PAGE_DATE);if(nd){var d=JSON.parse(nd);nqScore=d.correct===d.total?' 测验全对！':' 测验 '+d.correct+'/'+d.total;}}catch(e){}
+    var headlineCount=Array.isArray(HL_SECTIONS)?HL_SECTIONS.length:0;
+    var headlineText=headlineCount>0?'，'+headlineCount+'条实时新闻':'';
     var kpLine='';
     if(KPICKS.length>0){
       var items=[];for(var i=0;i<KPICKS.length&&i<3;i++) items.push(KPICKS[i]);
       kpLine='\n\n💡 今天我知道了：\n'+items.join('\n');
     }
-    var text='妈妈你看！我今天看了'+VIDEO_COUNT+'个视频，共'+TOTAL_DUR+'分钟！'+nqScore+kpLine+'\n\n📺 看我的学习报告 👇\n'+url;
+    var text='妈妈你看！我今天看了'+VIDEO_COUNT+'个视频'+headlineText+'，共'+TOTAL_DUR+'分钟！'+kpLine+'\n\n📺 看我的学习报告 👇\n'+url;
     showShareModal('📲 发给爸爸妈妈',text);
   };
 
@@ -2345,6 +2510,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   }
 
   window.lcSaveImage=function(){
+    if(!ensureLearnCardNameReady()) return;
     var wrap=document.getElementById('img-preview-wrap');
     wrap.innerHTML='<div class="img-preview-loading">⏳ 正在生成图片...</div>';
     document.getElementById('img-preview').classList.add('show');
