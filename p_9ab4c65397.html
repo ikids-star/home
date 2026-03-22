@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>大宝哥的频道 · 2026-03-15</title>
-<script type="application/json" id="page-meta">{"date":"2026-03-15","day":"sunday","theme":"🌏 世界历史 & 创意 World History & Creative","child_name":"大宝哥","total_duration":37,"video_count":6,"series_names":["Dr Binocs Show","如果历史是一群喵","宇宙儿童瑜伽冒险"]}</script>
+<title>大宝哥的频道 · 2026-03-22</title>
+<script type="application/json" id="page-meta">{"date":"2026-03-22","day":"sunday","theme":"🌏 世界历史 & 创意 World History & Creative","child_name":"大宝哥","total_duration":55,"video_count":12,"series_names":["如果历史是一群喵","儿童绘画教室","宇宙儿童瑜伽冒险","可汗学院数学","Scratch 编程入门"]}</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--c:#00695C;--bg:#E0F2F1;--grad:linear-gradient(135deg, #004D40 0%, #26A69A 100%)}
@@ -54,6 +54,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 .vthumb{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;position:relative;display:flex;align-items:center;justify-content:center}
 .thumb-icon{font-size:32px;color:rgba(255,255,255,.8);font-weight:700}
 .vdur{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.72);color:#fff;font-size:12px;padding:2px 8px;border-radius:6px;font-weight:500}
+.vplatform-badge{position:absolute;top:8px;left:8px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff}
+.bili-badge{background:#FB7299}
 .vinfo{padding:12px 16px}
 .vtitle{font-size:15px;font-weight:600;margin-bottom:3px;line-height:1.35}
 .vmeta{font-size:13px;color:#888}
@@ -132,17 +134,35 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 .inter-prog{display:none}
 
 /* Bilibili panel */
-.bili-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 24px;background:#111;text-align:center;color:#fff;width:100%;aspect-ratio:16/9}
-.bili-emoji{font-size:48px;margin-bottom:16px}
-.bili-title{font-size:17px;font-weight:600;margin-bottom:6px;padding:0 12px;line-height:1.4}
-.bili-meta{font-size:13px;color:#aaa;margin-bottom:24px}
-.bili-btn-hd{padding:14px 32px;border-radius:12px;font-size:16px;font-weight:600;border:none;cursor:pointer;background:#FB7299;color:#fff;margin-bottom:12px;width:100%;max-width:280px;transition:transform .1s}
+.bili-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 24px;background:#111;text-align:center;color:#fff;width:100%;aspect-ratio:16/9;position:relative;overflow:hidden}
+.bili-panel.has-cover{background-size:cover;background-position:center}
+.bili-panel.has-cover::before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.5) 40%,rgba(0,0,0,.3) 100%)}
+.bili-panel>*{position:relative;z-index:1}
+.bili-logo{width:36px;height:36px;margin-bottom:12px;border-radius:8px;background:#FB7299;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;font-family:sans-serif;letter-spacing:-1px}
+.bili-title{font-size:18px;font-weight:700;margin-bottom:6px;padding:0 16px;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.bili-ep{font-size:14px;color:#FB7299;font-weight:600;margin-bottom:4px}
+.bili-meta{font-size:13px;color:#ccc;margin-bottom:24px}
+.bili-btn-hd{padding:16px 36px;border-radius:14px;font-size:17px;font-weight:700;border:none;cursor:pointer;background:#FB7299;color:#fff;margin-bottom:10px;width:100%;max-width:300px;transition:transform .1s;box-shadow:0 4px 16px rgba(251,114,153,.4);display:flex;align-items:center;justify-content:center;gap:8px}
 .bili-btn-hd:active{transform:scale(.95)}
-.bili-btn-embed{padding:10px 24px;border-radius:10px;font-size:14px;border:1px solid #444;background:transparent;color:#888;cursor:pointer;width:100%;max-width:280px;transition:transform .1s}
-.bili-btn-embed:active{transform:scale(.95)}
-.bili-hint{font-size:13px;color:#555;margin-top:16px;line-height:1.6}
-.bili-bangumi-note{font-size:13px;color:#FB7299;margin-top:4px;padding:8px 16px;border:1px dashed #FB729966;border-radius:8px;max-width:280px}
+.bili-hint{font-size:12px;color:rgba(255,255,255,.45);margin-top:14px;line-height:1.5}
+.bili-bangumi-note{font-size:13px;color:#FB7299;margin-top:8px;padding:8px 16px;border:1px dashed #FB729966;border-radius:8px;max-width:280px}
+.bili-watching{padding:32px 24px}
+.bili-watching-emoji{font-size:56px;margin-bottom:16px;animation:pulse 2s infinite}
+.bili-watching-title{font-size:18px;font-weight:700;margin-bottom:4px}
+.bili-watching-sub{font-size:13px;color:#aaa;margin-bottom:4px}
+.bili-countdown{font-size:28px;font-weight:700;color:#FB7299;margin:16px 0;font-variant-numeric:tabular-nums}
+.bili-countdown-label{font-size:12px;color:#888;margin-bottom:20px}
+.bili-btn-done{padding:16px 36px;border-radius:14px;font-size:16px;font-weight:700;border:none;cursor:pointer;background:#4CAF50;color:#fff;width:100%;max-width:300px;transition:transform .1s;box-shadow:0 4px 16px rgba(76,175,80,.3);margin-bottom:10px}
+.bili-btn-done:active{transform:scale(.95)}
+.bili-btn-reopen{padding:8px 20px;border-radius:8px;font-size:13px;border:1px solid #444;background:transparent;color:#999;cursor:pointer;transition:transform .1s}
+.bili-btn-reopen:active{transform:scale(.95)}
+.bili-return-prompt{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#222;border:1px solid #333;border-radius:16px;padding:16px 24px;display:flex;align-items:center;gap:12px;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,.5);animation:slideUp .3s ease}
+.bili-return-prompt button{padding:10px 20px;border-radius:10px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:transform .1s}
+.bili-return-prompt button:active{transform:scale(.95)}
+.bili-return-yes{background:#4CAF50;color:#fff}
+.bili-return-no{background:transparent;border:1px solid #555;color:#aaa}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes slideUp{from{transform:translateX(-50%) translateY(20px);opacity:0}to{transform:translateX(-50%) translateY(0);opacity:1}}
 
 /* Quiz / Pre-reading page */
 #quiz{position:fixed;inset:0;z-index:1000;background:#f5f5f7;display:none;color:#1d1d1f;overflow-y:auto;-webkit-overflow-scrolling:touch}
@@ -492,16 +512,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 
 <div id="browse" class="wrap">
   <div class="hdr">
-    <div class="hdr-hi">3月15日 · 周日</div>
+    <div class="hdr-hi">3月22日 · 周日</div>
     <h1><span class="hdr-float">👋</span> 嗨，大宝哥！</h1>
     <p class="hdr-sub">你的专属放映厅开场啦</p>
     <div class="hdr-badge">🎬 今日主题 · 🌏 世界历史 &amp; 创意 World History &amp; Creative</div>
-    <div class="hdr-stats">🎬 6个精彩视频 · ⏱ 37分钟</div>
+    <div class="hdr-stats">🎬 12个精彩视频 · ⏱ 55分钟</div>
   </div>
 
   <div class="hdr-entry" id="hdr-entry" onclick="scrollToComm()">
     <span class="hdr-entry-icon">💬</span>
-    <span class="hdr-entry-text"><span>如果你能回到古代中国的任何一个朝代，你想去哪个？为什么？</span></span>
+    <span class="hdr-entry-text"><span>如果你能穿越回春秋战国，你想去见哪个历史人物？为什么？</span></span>
     <span class="hdr-entry-arrow">›</span>
   </div>
 
@@ -513,95 +533,167 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
         <span class="hl-icon">📅</span>
         <div class="hl-body">
           <div class="hl-label">今天是什么日子</div>
-          <div class="hl-text">3月15日 · 🏖️ 第一学期假期<br>1985年的今天，世界上第一个互联网域名 Symbolics.com 被注册！从那一天起，互联网开始改变世界 🌐</div>
+          <div class="hl-text">3月22日 · 世界水日 💧<br>地球上70%的面积被水覆盖，但只有不到3%是淡水！今年的主题是「水流之处，平等生长」。<br>🏖️ 第一学期假期中，今天可以看稍长的内容！</div>
+        </div>
+      </div>
+      <div class="hl-row">
+        <span class="hl-icon">🌤️</span>
+        <div class="hl-body">
+          <div class="hl-label">新加坡天气</div>
+          <div class="hl-text">☀️ 31°C · 晴间多云<br>今天没有下雨，紫外线指数高达9.3，户外记得戴帽子哦！</div>
         </div>
       </div>
       <div class="hl-row">
         <span class="hl-icon">🌍</span>
         <div class="hl-body">
           <div class="hl-label">世界在发生什么</div>
-          <div class="hl-text">美国新奥尔良科学展上，中学生用传感器做出了能握东西的机械手！还有人在研究能吃塑料的虫子，帮助解决塑料污染问题 🐛</div>
-        </div>
-      </div>
-      <div class="hl-row">
-        <span class="hl-icon">🌤️</span>
-        <div class="hl-body">
-          <div class="hl-label">新加坡今天的天气</div>
-          <div class="hl-text">⛈️ 下午有雷暴，最高33°C<br>你知道闪电的温度是太阳表面的5倍吗？可以达到30,000°C！⚡</div>
+          <div class="hl-text">🦕 11岁女孩发现了地球上最大的海洋爬行动物化石！这个叫「鱼龙泰坦」的家伙有25米长，比蓝鲸还大，生活在2亿年前。<br>🔬 科学家在火星地下35米处发现了古代河流三角洲，说明火星上曾经有过水流！</div>
         </div>
       </div>
       
       <div class="hl-curiosity" onclick="this.classList.toggle('open')">
         <div class="hl-q-label">❓ 大宝哥可能会问</div>
-        <div class="hl-q">"第一个网站长什么样？现在还能打开吗？"</div>
+        <div class="hl-q">"地球上的水为什么永远用不完？"</div>
         <div class="hl-a">
             <div class="hl-a-hint">👆 点击看看答案</div>
-            <div class="hl-a-body">世界上第一个网站是1991年蒂姆·伯纳斯-李创建的，只有简单的文字和链接，没有图片和视频。它现在还能打开哦！地址是 info.cern.ch，你可以去看看互联网最初的样子。</div>
+            <div class="hl-a-body">因为水会循环！太阳把海水蒸发变成云，云飘到陆地上下雨，雨水流入河流又回到大海。这个过程叫做「水循环」，已经运行了几十亿年！不过虽然水总量不变，干净的淡水却很稀缺哦。</div>
           </div>
       </div>
     </section>
 
   <section class="playlist">
     <div class="sec-title">📺 今日片单</div>
-    <div class="slot-label">🌟 今日头条 · Dr Binocs Show</div>
+    <div class="slot-label">📺 主系列 · 如果历史是一群喵</div>
       <div class="vcard" onclick="enterPlayMode(0)">
-        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/UXsomnDkntI/mqdefault.jpg')">
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
           
-          <span class="vdur">5min</span>
+          <span class="vplatform-badge bili-badge">B</span>
+          <span class="vdur">4min</span>
         </div>
         <div class="vinfo">
-          <div class="vtitle">How The Internet Works?</div>
-          <div class="vmeta">YouTube · English</div>
+          <div class="vtitle">大器晚成</div>
+          <div class="vmeta">Bilibili · 中文 · 第15集/共38集</div>
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(1)">
-        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/ZR0O1wodxyE/mqdefault.jpg')">
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
           
-          <span class="vdur">5min</span>
-        </div>
-        <div class="vinfo">
-          <div class="vtitle">What Causes Thunder &amp; Lightning?</div>
-          <div class="vmeta">YouTube · English</div>
-        </div>
-      </div><div class="slot-label">📺 主系列 · 如果历史是一群喵</div>
-      <div class="vcard" onclick="enterPlayMode(2)">
-        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
-          <span class="thumb-icon">B</span>
+          <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
         <div class="vinfo">
-          <div class="vtitle">伊尹辅政</div>
-          <div class="vmeta">Bilibili · 中文 · 第8集/共38集</div>
+          <div class="vtitle">一鸣惊人</div>
+          <div class="vmeta">Bilibili · 中文 · 第16集/共38集</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(2)">
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
+          <span class="vplatform-badge bili-badge">B</span>
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">威震东南</div>
+          <div class="vmeta">Bilibili · 中文 · 第17集/共38集</div>
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(3)">
-        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
-          <span class="thumb-icon">B</span>
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
+          <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
         <div class="vinfo">
-          <div class="vtitle">武丁中兴</div>
-          <div class="vmeta">Bilibili · 中文 · 第9集/共38集</div>
+          <div class="vtitle">吴越相争</div>
+          <div class="vmeta">Bilibili · 中文 · 第18集/共38集</div>
         </div>
       </div>
       <div class="vcard" onclick="enterPlayMode(4)">
-        <div class="vthumb" style="background:linear-gradient(135deg, #004D40 0%, #26A69A 100%)">
-          <span class="thumb-icon">B</span>
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
+          <span class="vplatform-badge bili-badge">B</span>
           <span class="vdur">4min</span>
         </div>
         <div class="vinfo">
-          <div class="vtitle">末代商王</div>
-          <div class="vmeta">Bilibili · 中文 · 第10集/共38集</div>
+          <div class="vtitle">三家分晋</div>
+          <div class="vmeta">Bilibili · 中文 · 第19集/共38集</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(5)">
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
+          <span class="vplatform-badge bili-badge">B</span>
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">商鞅变法</div>
+          <div class="vmeta">Bilibili · 中文 · 第20集/共38集</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(6)">
+        <div class="vthumb" style="background-image:url('http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg')">
+          
+          <span class="vplatform-badge bili-badge">B</span>
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">六国合纵</div>
+          <div class="vmeta">Bilibili · 中文 · 第21集/共38集</div>
+        </div>
+      </div><div class="slot-label">📺 副系列 · 儿童绘画教室</div>
+      <div class="vcard" onclick="enterPlayMode(7)">
+        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/xgWR6r3_lRo/mqdefault.jpg')">
+          
+          
+          <span class="vdur">8min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">How To Draw A Spinosaurus Dinosaur</div>
+          <div class="vmeta">YouTube · English · 第1集/共2集</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(8)">
+        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/clDh6CsrMK8/mqdefault.jpg')">
+          
+          
+          <span class="vdur">7min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">How To Draw A TacoSaurus</div>
+          <div class="vmeta">YouTube · English · 第2集/共2集</div>
         </div>
       </div><div class="slot-label">🎯 自由选择 · 宇宙儿童瑜伽冒险</div>
-      <div class="vcard" onclick="enterPlayMode(5)">
+      <div class="vcard" onclick="enterPlayMode(9)">
         <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/KAT5NiWHFIU/mqdefault.jpg')">
+          
           
           <span class="vdur">15min</span>
         </div>
         <div class="vinfo">
           <div class="vtitle">We're Going on a Bear Hunt</div>
-          <div class="vmeta">YouTube · English</div>
+          <div class="vmeta">YouTube · English · 选看</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(10)">
+        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/jgWqSjgMAtw/mqdefault.jpg')">
+          
+          
+          <span class="vdur">4min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">Fraction Basics</div>
+          <div class="vmeta">YouTube · English · 选看</div>
+        </div>
+      </div>
+      <div class="vcard" onclick="enterPlayMode(11)">
+        <div class="vthumb" style="background-image:url('https://img.youtube.com/vi/IyYx_ZM5lyw/mqdefault.jpg')">
+          
+          
+          <span class="vdur">16min</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">Scratch Plants Vs Zombies - Beginner Tutorial</div>
+          <div class="vmeta">YouTube · English · 选看</div>
         </div>
       </div>
   </section>
@@ -613,7 +705,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
       
     <div class="comm-topic">
       <div class="comm-topic-label">📣 今日话题</div>
-      <div class="comm-topic-q">如果你能回到古代中国的任何一个朝代，你想去哪个？为什么？</div>
+      <div class="comm-topic-q">如果你能穿越回春秋战国，你想去见哪个历史人物？为什么？</div>
     </div>
       <div class="comm-list" id="comm-list">
       <div class="comm-msg" data-id="s1">
@@ -759,7 +851,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     </section>
 
   <div class="ftr">
-    <div class="total">⏱ 总时长 37分钟 · 6个视频</div>
+    <div class="total">⏱ 总时长 55分钟 · 12个视频</div>
     <a class="ftr-link" href="index.html">📚 往日片单</a>
   </div>
   <div style="height:72px"></div>
@@ -840,12 +932,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 <div id="play">
   <div class="p-hdr">
     <button class="p-back" onclick="history.back()">← 返回</button>
-    <span class="p-cnt" id="pcnt">1/6</span>
+    <span class="p-cnt" id="pcnt">1/12</span>
   </div>
   <div class="p-player" id="p-player"></div>
   <div class="p-quick-nav" id="qnav">
     <button class="qn-btn" id="qprev" onclick="prevVideo()">⬅ 上一个</button>
-    <span class="qn-cnt" id="qcnt">1/6</span>
+    <span class="qn-cnt" id="qcnt">1/12</span>
     <button class="qn-btn" id="qnext" onclick="nextVideo()">下一个 ➡</button>
   </div>
   <div class="p-np">
@@ -859,50 +951,92 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     <div class="pli" id="pli-0" onclick="playVideo(0)">
       <span class="pli-st" id="pli-st-0">○</span>
       <div class="pli-info">
-        <div class="pli-t">How The Internet Works?</div>
-        <div class="pli-m">Dr Binocs Show · 5min</div>
+        <div class="pli-t">大器晚成</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
       </div>
     </div>
     <div class="pli" id="pli-1" onclick="playVideo(1)">
       <span class="pli-st" id="pli-st-1">○</span>
       <div class="pli-info">
-        <div class="pli-t">What Causes Thunder &amp; Lightning?</div>
-        <div class="pli-m">Dr Binocs Show · 5min</div>
+        <div class="pli-t">一鸣惊人</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
       </div>
     </div>
     <div class="pli" id="pli-2" onclick="playVideo(2)">
       <span class="pli-st" id="pli-st-2">○</span>
       <div class="pli-info">
-        <div class="pli-t">伊尹辅政</div>
+        <div class="pli-t">威震东南</div>
         <div class="pli-m">如果历史是一群喵 · 4min</div>
       </div>
     </div>
     <div class="pli" id="pli-3" onclick="playVideo(3)">
       <span class="pli-st" id="pli-st-3">○</span>
       <div class="pli-info">
-        <div class="pli-t">武丁中兴</div>
+        <div class="pli-t">吴越相争</div>
         <div class="pli-m">如果历史是一群喵 · 4min</div>
       </div>
     </div>
     <div class="pli" id="pli-4" onclick="playVideo(4)">
       <span class="pli-st" id="pli-st-4">○</span>
       <div class="pli-info">
-        <div class="pli-t">末代商王</div>
+        <div class="pli-t">三家分晋</div>
         <div class="pli-m">如果历史是一群喵 · 4min</div>
       </div>
     </div>
     <div class="pli" id="pli-5" onclick="playVideo(5)">
       <span class="pli-st" id="pli-st-5">○</span>
       <div class="pli-info">
+        <div class="pli-t">商鞅变法</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-6" onclick="playVideo(6)">
+      <span class="pli-st" id="pli-st-6">○</span>
+      <div class="pli-info">
+        <div class="pli-t">六国合纵</div>
+        <div class="pli-m">如果历史是一群喵 · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-7" onclick="playVideo(7)">
+      <span class="pli-st" id="pli-st-7">○</span>
+      <div class="pli-info">
+        <div class="pli-t">How To Draw A Spinosaurus Dinosaur</div>
+        <div class="pli-m">儿童绘画教室 · 8min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-8" onclick="playVideo(8)">
+      <span class="pli-st" id="pli-st-8">○</span>
+      <div class="pli-info">
+        <div class="pli-t">How To Draw A TacoSaurus</div>
+        <div class="pli-m">儿童绘画教室 · 7min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-9" onclick="playVideo(9)">
+      <span class="pli-st" id="pli-st-9">○</span>
+      <div class="pli-info">
         <div class="pli-t">We're Going on a Bear Hunt</div>
         <div class="pli-m">宇宙儿童瑜伽冒险 · 15min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-10" onclick="playVideo(10)">
+      <span class="pli-st" id="pli-st-10">○</span>
+      <div class="pli-info">
+        <div class="pli-t">Fraction Basics</div>
+        <div class="pli-m">可汗学院数学 · 4min</div>
+      </div>
+    </div>
+    <div class="pli" id="pli-11" onclick="playVideo(11)">
+      <span class="pli-st" id="pli-st-11">○</span>
+      <div class="pli-info">
+        <div class="pli-t">Scratch Plants Vs Zombies - Beginner Tutorial</div>
+        <div class="pli-m">Scratch 编程入门 · 16min</div>
       </div>
     </div>
   </div>
   <div class="p-done" id="pdone">
     <h3>🎉 全部看完啦！</h3>
     <p>太棒了，今天的视频都看完了</p>
-    <a class="share" href="https://wa.me/65XXXXXXXX?text=%E5%A4%A7%E5%AE%9D%E5%93%A5%E4%BB%8A%E5%A4%A9%E7%9A%84%E8%A7%86%E9%A2%91%E9%83%BD%E7%9C%8B%E5%AE%8C%E5%95%A6%20%E2%9C%85%20(2026%E5%B9%B43%E6%9C%8815%E6%97%A5%20%E5%91%A8%E6%97%A5)" target="_blank">📱 告诉爸爸妈妈</a>
+    <a class="share" href="https://wa.me/65XXXXXXXX?text=%E5%A4%A7%E5%AE%9D%E5%93%A5%E4%BB%8A%E5%A4%A9%E7%9A%84%E8%A7%86%E9%A2%91%E9%83%BD%E7%9C%8B%E5%AE%8C%E5%95%A6%20%E2%9C%85%20(2026%E5%B9%B43%E6%9C%8822%E6%97%A5%20%E5%91%A8%E6%97%A5)" target="_blank">📱 告诉爸爸妈妈</a>
   </div>
 </div>
 
@@ -983,25 +1117,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 (function(){
   var DEV=new URLSearchParams(window.location.search).has('dev');
   if(DEV) document.addEventListener('DOMContentLoaded',function(){var b=document.createElement('div');b.textContent='DEV';b.style.cssText='position:fixed;top:8px;right:8px;background:#ff5722;color:#fff;padding:2px 10px;border-radius:4px;font-size:12px;z-index:99999;opacity:0.85;pointer-events:none;font-weight:bold;letter-spacing:1px';document.body.appendChild(b)});
-  var V=[{"title":"How The Internet Works?","series":"Dr Binocs Show","embed":"https://www.youtube.com/embed/UXsomnDkntI?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=UXsomnDkntI","platform":"YouTube","lang":"English","dur":5,"ep":"","ytId":"UXsomnDkntI","bangumi":false},{"title":"What Causes Thunder & Lightning?","series":"Dr Binocs Show","embed":"https://www.youtube.com/embed/ZR0O1wodxyE?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=ZR0O1wodxyE","platform":"YouTube","lang":"English","dur":5,"ep":"","ytId":"ZR0O1wodxyE","bangumi":false},{"title":"伊尹辅政","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=251837&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep251837","platform":"Bilibili","lang":"中文","dur":4,"ep":"第8集/共38集","ytId":"","bangumi":true},{"title":"武丁中兴","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=253438&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep253438","platform":"Bilibili","lang":"中文","dur":4,"ep":"第9集/共38集","ytId":"","bangumi":true},{"title":"末代商王","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=253809&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep253809","platform":"Bilibili","lang":"中文","dur":4,"ep":"第10集/共38集","ytId":"","bangumi":true},{"title":"We're Going on a Bear Hunt","series":"宇宙儿童瑜伽冒险","embed":"https://www.youtube.com/embed/KAT5NiWHFIU?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=KAT5NiWHFIU","platform":"YouTube","lang":"English","dur":15,"ep":"","ytId":"KAT5NiWHFIU","bangumi":false}];
-  var ci=-1,watched={},SK='kidstv_2026-03-15',quizDone=false;
-  var ytP=null,bT=null,cT=null,biliPop=null,popT=null;
-  var SHARE='https://wa.me/65XXXXXXXX?text=%E5%A4%A7%E5%AE%9D%E5%93%A5%E4%BB%8A%E5%A4%A9%E7%9A%84%E8%A7%86%E9%A2%91%E9%83%BD%E7%9C%8B%E5%AE%8C%E5%95%A6%20%E2%9C%85%20(2026%E5%B9%B43%E6%9C%8815%E6%97%A5%20%E5%91%A8%E6%97%A5)';
-  var QUIZ_Q="第一个网站长什么样？现在还能打开吗？";
-  var QUIZ_A="世界上第一个网站是1991年蒂姆·伯纳斯-李创建的，只有简单的文字和链接，没有图片和视频。它现在还能打开哦！地址是 info.cern.ch，你可以去看看互联网最初的样子。";
-  var HL_SECTIONS=[{"icon":"📅","title":"今天是什么日子","content":"3月15日 · 🏖️ 第一学期假期\n1985年的今天，世界上第一个互联网域名 Symbolics.com 被注册！从那一天起，互联网开始改变世界 🌐"},{"icon":"🌍","title":"世界在发生什么","content":"美国新奥尔良科学展上，中学生用传感器做出了能握东西的机械手！还有人在研究能吃塑料的虫子，帮助解决塑料污染问题 🐛"},{"icon":"🌤️","title":"新加坡今天的天气","content":"⛈️ 下午有雷暴，最高33°C\n你知道闪电的温度是太阳表面的5倍吗？可以达到30,000°C！⚡"}];
-  var NQ=[];
-  var KPICKS=["🌐 1985年注册的 Symbolics.com 是世界上第一个互联网域名","🏛️ 商朝历经约600年，从商汤到纣王共30位王","⚡ 闪电的温度可以达到30,000°C，是太阳表面的5倍","🐛 科学家发现有些虫子能吃塑料，可以帮助解决污染问题","🎨 画恐龙时先从基本形状开始，再慢慢加上细节"];
-  var CARD_HL=["🎬 互联网是怎么工作的（数据如何传遍全球）","🎬 伊尹辅政（商朝名相如何辅佐商汤）","🎬 末代商王（纣王与商朝的灭亡）"];
-  var DISC_TOPIC="如果你能回到古代中国的任何一个朝代，你想去哪个？为什么？";
+  var V=[{"title":"大器晚成","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260613&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260613","platform":"Bilibili","lang":"中文","dur":4,"ep":"第15集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"一鸣惊人","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260614&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260614","platform":"Bilibili","lang":"中文","dur":4,"ep":"第16集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"威震东南","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=260615&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep260615","platform":"Bilibili","lang":"中文","dur":4,"ep":"第17集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"吴越相争","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261513&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261513","platform":"Bilibili","lang":"中文","dur":4,"ep":"第18集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"三家分晋","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261515&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261515","platform":"Bilibili","lang":"中文","dur":4,"ep":"第19集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"商鞅变法","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=261516&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep261516","platform":"Bilibili","lang":"中文","dur":4,"ep":"第20集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"六国合纵","series":"如果历史是一群喵","embed":"https://player.bilibili.com/player.html?ep=262923&high_quality=1&quality=80&qn=80&danmaku=0&as_wide=1","url":"https://www.bilibili.com/bangumi/play/ep262923","platform":"Bilibili","lang":"中文","dur":4,"ep":"第21集/共38集","ytId":"","bangumi":true,"biliCover":"http://i0.hdslb.com/bfs/bangumi/e6cf75db82e292f7b5ca29c96767464c686dc94d.jpg"},{"title":"How To Draw A Spinosaurus Dinosaur","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/xgWR6r3_lRo?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=xgWR6r3_lRo","platform":"YouTube","lang":"English","dur":8,"ep":"第1集/共2集","ytId":"xgWR6r3_lRo","bangumi":false,"biliCover":""},{"title":"How To Draw A TacoSaurus","series":"儿童绘画教室","embed":"https://www.youtube.com/embed/clDh6CsrMK8?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=clDh6CsrMK8","platform":"YouTube","lang":"English","dur":7,"ep":"第2集/共2集","ytId":"clDh6CsrMK8","bangumi":false,"biliCover":""},{"title":"We're Going on a Bear Hunt","series":"宇宙儿童瑜伽冒险","embed":"https://www.youtube.com/embed/KAT5NiWHFIU?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=KAT5NiWHFIU","platform":"YouTube","lang":"English","dur":15,"ep":"选看","ytId":"KAT5NiWHFIU","bangumi":false,"biliCover":""},{"title":"Fraction Basics","series":"可汗学院数学","embed":"https://www.youtube.com/embed/jgWqSjgMAtw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=jgWqSjgMAtw","platform":"YouTube","lang":"English","dur":4,"ep":"选看","ytId":"jgWqSjgMAtw","bangumi":false,"biliCover":""},{"title":"Scratch Plants Vs Zombies - Beginner Tutorial","series":"Scratch 编程入门","embed":"https://www.youtube.com/embed/IyYx_ZM5lyw?rel=0&modestbranding=1&playsinline=1","url":"https://www.youtube.com/watch?v=IyYx_ZM5lyw","platform":"YouTube","lang":"English","dur":16,"ep":"选看","ytId":"IyYx_ZM5lyw","bangumi":false,"biliCover":""}];
+  var ci=-1,watched={},SK='kidstv_2026-03-22',quizDone=false;
+  var ytP=null,bT=null,cT=null,biliPop=null,popT=null,biliWatchStart=null,biliCdT=null;
+  var isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  var SHARE='https://wa.me/65XXXXXXXX?text=%E5%A4%A7%E5%AE%9D%E5%93%A5%E4%BB%8A%E5%A4%A9%E7%9A%84%E8%A7%86%E9%A2%91%E9%83%BD%E7%9C%8B%E5%AE%8C%E5%95%A6%20%E2%9C%85%20(2026%E5%B9%B43%E6%9C%8822%E6%97%A5%20%E5%91%A8%E6%97%A5)';
+  var QUIZ_Q="地球上的水为什么永远用不完？";
+  var QUIZ_A="因为水会循环！太阳把海水蒸发变成云，云飘到陆地上下雨，雨水流入河流又回到大海。这个过程叫做「水循环」，已经运行了几十亿年！不过虽然水总量不变，干净的淡水却很稀缺哦。";
+  var HL_SECTIONS=[{"icon":"📅","title":"今天是什么日子","content":"3月22日 · 世界水日 💧\n地球上70%的面积被水覆盖，但只有不到3%是淡水！今年的主题是「水流之处，平等生长」。\n🏖️ 第一学期假期中，今天可以看稍长的内容！"},{"icon":"🌤️","title":"新加坡天气","content":"☀️ 31°C · 晴间多云\n今天没有下雨，紫外线指数高达9.3，户外记得戴帽子哦！"},{"icon":"🌍","title":"世界在发生什么","content":"🦕 11岁女孩发现了地球上最大的海洋爬行动物化石！这个叫「鱼龙泰坦」的家伙有25米长，比蓝鲸还大，生活在2亿年前。\n🔬 科学家在火星地下35米处发现了古代河流三角洲，说明火星上曾经有过水流！"}];
+  var NQ=[{"question":"3月22日是什么国际日？","options":["世界读书日","世界水日","世界地球日","世界海洋日"],"answer":1},{"question":"11岁女孩发现的巨型海洋爬行动物有多长？","options":["10米","15米","25米","50米"],"answer":2},{"question":"科学家在火星地下发现了什么？","options":["恐龙化石","古代河流三角洲","外星人遗迹","地下海洋"],"answer":1},{"question":"地球上被水覆盖的面积有多少？","options":["30%","50%","70%","90%"],"answer":2}];
+  var KPICKS=["🦕 11岁女孩发现了比蓝鲸还大的2亿年前海洋爬行动物化石","💧 地球70%被水覆盖，但淡水不到3%","🏯 春秋战国时期，商鞅变法让秦国变强大","🎨 画恐龙其实只需要简单的几何形状拼起来","🔴 火星地下35米处发现了古代河流三角洲"];
+  var CARD_HL=["🎬 大器晚成（春秋重耳流亡19年终成霸主）","🎬 商鞅变法（秦国崛起的关键改革）","🎬 画棘龙（跟着画恐龙step-by-step）"];
+  var DISC_TOPIC="如果你能穿越回春秋战国，你想去见哪个历史人物？为什么？";
   var SITE_URL="https://ikids-star.github.io/daily";
-  var PAGE_DATE="2026-03-15";
+  var PAGE_DATE="2026-03-22";
   var THEME_TEXT="🌏 世界历史 & 创意 World History & Creative";
-  var DATE_SHORT='3月15日';
+  var DATE_SHORT='3月22日';
   var WEEKDAY_ZH='周日';
   var CHILD_NAME="大宝哥";
-  var TOTAL_DUR=37;
-  var VIDEO_COUNT=6;
+  var TOTAL_DUR=55;
+  var VIDEO_COUNT=12;
   var GF_URL="https://docs.google.com/forms/d/e/1FAIpQLSeKO26DrL-XRbAx3Zkhpysj3FfWGGEgVi2Xap6nFFh6xpg4zw/formResponse";
   var GF_FIELDS={"date":"entry.500917702","child":"entry.2073211146","reactions":"entry.1688080920","timestamp":"entry.928698237"};
   var CF_URL="https://docs.google.com/forms/d/e/1FAIpQLSePXaPM0RFcglUIDfJSP4aWMvpefJWbvh1eiwyX-mBkTZYdUg/formResponse";
@@ -1047,10 +1182,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
   }
 
   function cleanup(){
-    clearTimeout(bT);clearInterval(cT);clearInterval(popT);
+    clearTimeout(bT);clearInterval(cT);clearInterval(popT);clearInterval(biliCdT);
     if(ytP){try{ytP.destroy()}catch(e){}ytP=null}
     if(biliPop&&!biliPop.closed){try{biliPop.close()}catch(e){}}
-    biliPop=null;
+    biliPop=null;biliWatchStart=null;biliCdT=null;
+    var rp=document.getElementById('bili-return-prompt');if(rp)rp.remove();
     document.getElementById('p-player').innerHTML='';
   }
 
@@ -1569,15 +1705,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
       });
     }else if(v.platform==='Bilibili'){
       var p=document.createElement('div');p.className='bili-panel';p.id='bili-panel';
-      var embedBtn=v.bangumi
-        ?'<div class="bili-bangumi-note">📺 番剧内容需在B站观看</div>'
-        :'<button class="bili-btn-embed" onclick="embedBili()">在这里播放 (可能为低清)</button>';
-      p.innerHTML='<div class="bili-emoji">🎬</div>'+
+      if(v.biliCover){p.classList.add('has-cover');p.style.backgroundImage='url('+v.biliCover+')';}
+      var epHtml=v.ep?'<div class="bili-ep">'+escH(v.ep)+'</div>':'';
+      var bangumiNote=v.bangumi?'<div class="bili-bangumi-note">番剧内容 · 在B站观看完整高清版</div>':'';
+      var isMob=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      var ctaText=isMob?'打开B站App ▶':'在B站看高清 ▶';
+      p.innerHTML='<div class="bili-logo">B</div>'+
         '<div class="bili-title">'+escH(v.title)+'</div>'+
-        '<div class="bili-meta">'+escH(v.series)+' · '+v.lang+' · '+v.dur+'min'+(v.ep?' · '+escH(v.ep):'')+'</div>'+
-        '<button class="bili-btn-hd" onclick="openBili()">▶ 进入哔哩哔哩看高清</button>'+
-        embedBtn+
-        '<div class="bili-hint">已登录B站可观看高清<br>看完后关闭窗口即可回到这里</div>';
+        epHtml+
+        '<div class="bili-meta">'+escH(v.series)+' · '+v.lang+' · '+v.dur+'min</div>'+
+        '<button class="bili-btn-hd" onclick="openBili()">'+ctaText+'</button>'+
+        bangumiNote+
+        '<div class="bili-hint">B站视频在B站看才最清晰</div>';
       container.appendChild(p);
     }else{
       var f=document.createElement('iframe');
@@ -1591,42 +1730,85 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
     if(el)el.scrollIntoView({behavior:'smooth',block:'nearest'});
   };
 
+  function updateBiliCountdown(){
+    var el=document.getElementById('bili-cd');
+    var lbl=document.getElementById('bili-cd-label');
+    if(!el||!biliWatchStart)return;
+    var v=V[ci];if(!v)return;
+    var elapsed=Math.floor((Date.now()-biliWatchStart)/1000);
+    var total=v.dur*60;
+    var remain=Math.max(0,total-elapsed);
+    var mm=Math.floor(remain/60);var ss=remain%60;
+    el.textContent=mm+':'+(ss<10?'0':'')+ss;
+    if(remain<=0){lbl.textContent='视频应该看完了';clearInterval(biliCdT);biliCdT=null;}
+  }
+
   window.openBili=function(){
     var v=V[ci];
-    biliPop=window.open(v.url,'bilibili','width=1080,height=720,scrollbars=yes');
+    biliWatchStart=Date.now();
+
+    if(isMobile){
+      var appUrl;
+      if(v.bangumi){
+        var m=v.url.match(/ep(d+)/);
+        appUrl=m?'bilibili://bangumi/play/ep'+m[1]:v.url;
+      }else{
+        var bm=v.url.match(/video/(BV[a-zA-Z0-9]+)/);
+        appUrl=bm?'bilibili://video/'+bm[1]:v.url;
+      }
+      window.location.href=appUrl;
+      setTimeout(function(){window.open(v.url,'_blank');},2000);
+    }else{
+      biliPop=window.open(v.url,'bilibili','width=1080,height=720,scrollbars=yes');
+      clearInterval(popT);
+      popT=setInterval(function(){
+        if(biliPop&&biliPop.closed){
+          clearInterval(popT);biliPop=null;
+          biliWatchStart=null;clearInterval(biliCdT);biliCdT=null;
+          showInter();
+        }
+      },1000);
+    }
+
     var panel=document.getElementById('bili-panel');
     if(panel){
-      panel.innerHTML='<div class="bili-emoji" style="animation:pulse 2s infinite">📺</div>'+
-        '<div class="bili-title">正在B站窗口播放中...</div>'+
-        '<div class="bili-meta">'+escH(v.title)+'</div>'+
-        '<div class="bili-hint">看完后关闭B站窗口<br>就会自动回到这里 🔄</div>'+
-        '<button class="bili-btn-embed" onclick="biliDone()" style="margin-top:20px;border-color:#666;color:#ccc">✅ 我看完了</button>';
+      panel.className='bili-panel bili-watching';
+      panel.style.backgroundImage='';
+      panel.innerHTML='<div class="bili-watching-emoji">📺</div>'+
+        '<div class="bili-watching-title">正在B站播放中</div>'+
+        '<div class="bili-watching-sub">'+escH(v.title)+'</div>'+
+        '<div class="bili-countdown" id="bili-cd">'+v.dur+':00</div>'+
+        '<div class="bili-countdown-label" id="bili-cd-label">预计剩余时间</div>'+
+        '<button class="bili-btn-done" onclick="biliDone()">已看完 ✅</button>'+
+        '<button class="bili-btn-reopen" onclick="openBili()">重新打开 ↗</button>';
+      clearInterval(biliCdT);
+      biliCdT=setInterval(updateBiliCountdown,1000);
+      updateBiliCountdown();
     }
-    clearInterval(popT);
-    popT=setInterval(function(){
-      if(biliPop&&biliPop.closed){
-        clearInterval(popT);biliPop=null;
-        showInter();
-      }
-    },1000);
   };
 
-  window.embedBili=function(){
-    var v=V[ci];
-    var container=document.getElementById('p-player');
-    container.innerHTML='';
-    var f=document.createElement('iframe');
-    f.src=v.embed;f.allow='autoplay;fullscreen;encrypted-media';
-    f.allowFullscreen=true;f.style.cssText='width:100%;height:100%;border:none';
-    container.appendChild(f);
-    bT=setTimeout(showInter,DEV?0:(v.dur*60+15)*1000);
-  };
+  window.embedBili=function(){};
 
   window.biliDone=function(){
-    clearInterval(popT);
+    clearInterval(popT);clearInterval(biliCdT);biliCdT=null;
     if(biliPop&&!biliPop.closed){try{biliPop.close()}catch(e){}}
-    biliPop=null;
+    biliPop=null;biliWatchStart=null;
+    var rp=document.getElementById('bili-return-prompt');if(rp)rp.remove();
     showInter();
+  };
+
+  function showBiliReturnPrompt(){
+    if(document.getElementById('bili-return-prompt'))return;
+    var d=document.createElement('div');
+    d.className='bili-return-prompt';d.id='bili-return-prompt';
+    d.innerHTML='<span style="font-size:16px;color:#fff">看完了吗？</span>'+
+      '<button class="bili-return-yes" onclick="biliDone()">看完了</button>'+
+      '<button class="bili-return-no" onclick="dismissBiliPrompt()">还没</button>';
+    document.body.appendChild(d);
+  }
+
+  window.dismissBiliPrompt=function(){
+    var rp=document.getElementById('bili-return-prompt');if(rp)rp.remove();
   };
 
   function showInter(){
@@ -1895,6 +2077,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Ro
 
   document.addEventListener('visibilitychange',function(){
     if(document.visibilityState==='hidden') submitReactions();
+    if(document.visibilityState==='visible'&&biliWatchStart){
+      var elapsed=(Date.now()-biliWatchStart)/1000;
+      var v=V[ci];
+      if(v&&v.platform==='Bilibili'){
+        if(elapsed>v.dur*60*0.6){
+          biliWatchStart=null;clearInterval(biliCdT);biliCdT=null;
+          showInter();
+        }else{
+          showBiliReturnPrompt();
+        }
+      }
+    }
   });
 
   if(typeof IntersectionObserver!=='undefined'){
